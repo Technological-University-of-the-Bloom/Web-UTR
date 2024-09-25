@@ -1,0 +1,73 @@
+<html lang="es">
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body, html {
+        width: 100%;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        height: 400px; /* Altura fija */
+        overflow: hidden;
+        border-radius: 20px; /* Bordes redondeados del contenedor */
+      }
+
+      .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(70%); /* Oscurece ligeramente la imagen de fondo */
+        border-radius: 20px; /* Bordes redondeados de la imagen de fondo */
+      }
+
+      .text-overlay {
+        position: absolute;
+        bottom: 0; /* Coloca el cuadro en la parte inferior */
+        left: 0; /* Coloca el cuadro en la parte izquierda */
+        color: #000;
+        font-family: Arial, sans-serif;
+        background-color: white;
+        padding: 20px;
+        max-width: 400px; /* Ancho del cuadro de texto */
+        border-radius: 20px 0 0 20px; /* Bordes redondeados del cuadro de texto */
+      }
+
+      .text-overlay h2 {
+        font-size: 36px;
+        margin: 0;
+        color: #000;
+        line-height: 1.2;
+      }
+
+      .text-overlay p {
+        margin: 20px 0 0;
+        font-size: 24px;
+        line-height: 1.2;
+      }
+
+      .text-overlay strong {
+        color: #E30613; /* Color rojo */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Imagen de fondo -->
+      <img class="background-image" src="https://via.placeholder.com/1920x400.png?text=Background+Image" alt="Imagen de fondo">
+      
+      <!-- Texto sobrepuesto -->
+      <div class="text-overlay">
+        <h2>Utr webside<br>THE PLACE</h2>
+        <p>Are you <strong>Proudly</strong><br><strong>UTR?</strong></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+---
+const placeholderSrc = "https://via.placeholder.com/420x236.png?text=Placeholder+Image"; // URL de la imagen de placeholder
+---
+
+<style>
+  .placeholder-container {
+    width: 100%;
+    max-width: 420px; /* Ancho máximo del contenedor */
+    height: 236px; /* Altura fija */
+    overflow: hidden;
+  }
+
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+  }
+</style>
+
+<div class="placeholder-container">
+  <img src={placeholderSrc} alt="Placeholder Image" class="placeholder" />
+</div>
+

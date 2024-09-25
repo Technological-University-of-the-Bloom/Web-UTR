@@ -1,0 +1,75 @@
+---
+---
+<html lang="es">
+  <head>
+    <style>
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f8f8f8; /* Color de fondo */
+        padding: 10px 20px;
+        border-bottom: 2px solid #e0e0e0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .topbar img {
+        height: 40px; /* Ajusta la altura del logo */
+      }
+
+      .flag-container,
+      .dropdown-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .flag-container img {
+        height: 25px; /* Tamaño de la bandera */
+      }
+
+      .dropdown-container {
+        cursor: pointer;
+      }
+
+      .dropdown-container img {
+        height: 20px; /* Tamaño de la flecha */
+      }
+
+      .center-logo {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+      }
+
+      .center-logo img {
+        height: 35px; /* Tamaño del logo central */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <!-- Sección de la bandera -->
+      <div class="flag-container">
+        <a href="#">
+          <img src="https://via.placeholder.com/40x25.png?text=MX" alt="Bandera de México">
+        </a>
+      </div>
+
+      <!-- Logo central -->
+      <div class="center-logo">
+        <a href="#">
+          <img src="https://via.placeholder.com/100x35.png?text=UTR" alt="Logo UTR">
+        </a>
+      </div>
+
+      <!-- Sección del dropdown -->
+      <div class="dropdown-container">
+        <a href="#">
+          <img src="https://via.placeholder.com/20x20.png?text=%E2%96%BC" alt="Flecha desplegable">
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
