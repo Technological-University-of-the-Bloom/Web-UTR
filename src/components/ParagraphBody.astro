@@ -1,5 +1,5 @@
 ---
-
+const { content } = Astro.props;
 ---
 
 <html lang="es">
@@ -23,9 +23,7 @@
   </head>
   <body>
     <div class="custom-text">
-        Universidad Tecnológica El Retoño is a new alternative for higher education. At UTR, we believe in your potential to transform, innovate, and thrive.
-
-        Our commitment to education empowers you to break boundaries, discover your passions, and create a future full of possibilities. Together, we grow, learn, and shape tomorrow.
+        {content}
     </div>
   </body>
 </html>
