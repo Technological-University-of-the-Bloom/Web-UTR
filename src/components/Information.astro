@@ -1,0 +1,101 @@
+---
+// Puedes agregar cualquier lógica aquí si es necesario
+---
+
+<style>
+    /* Importar la fuente desde Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+
+    .container {
+      background-color: #E12030; /* Fondo rojo */
+      text-align: center;
+      border-radius: 8px;
+      width: 100%; /* Ancho máximo del contenedor */
+      max-width: 393px; /* Máximo ancho fijo */
+      height: 540px; /* Altura fija */
+      margin: 0 auto; /* Centrado en la página */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 50px 20px 0; /* Separación desde el margen superior y laterales */
+      box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+    }
+  
+    .title {
+      text-align: left;
+      margin-bottom: 50px; /* Separación entre el título y los botones */
+      width: 227px; /* Ancho específico del título */
+      height: 78px; /* Altura específica del título */
+      font-family: 'Barlow', sans-serif; /* Usar fuente Barlow */
+    }
+  
+    .black-text {
+      color: black; /* Color del texto "TAKE THE" en negro */
+      font-size: 2.5rem;
+      font-weight: 700; /* Usar el peso bold (700) */
+      font-family: 'Barlow', sans-serif; /* Usar fuente Barlow */
+    }
+  
+    .white-text {
+      color: white; /* Color del texto "NEXT STEP" en blanco */
+      font-size: 2.5rem;
+      font-weight: 700; /* Usar el peso bold (700) */
+      font-family: 'Barlow', sans-serif; /* Usar fuente Barlow */
+    }
+  
+    h1 {
+      font-size: 2rem;
+      font-weight: bold; /* Asegura que el encabezado h1 sea negrita */
+      margin: 0;
+      line-height: 1.2;
+      font-family: 'Barlow', sans-serif; /* Usar fuente Barlow */
+    }
+  
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%; /* Ocupa todo el ancho del contenedor */
+    }
+  
+    .buttons button {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: bold; /* Negrita para los textos de los botones */
+      cursor: pointer;
+      border-radius: 0 0 0 20px; /* Esquina inferior izquierda redondeada */
+      transition: background-color 0.3s ease;
+      width: 100%; /* Los botones ocuparán todo el ancho disponible */
+      max-width: 349px; /* Ancho máximo del botón */
+      height: 81px; /* Altura fija */
+      margin: 0 auto; /* Centra los botones horizontalmente */
+    }
+  
+    .buttons button span {
+      display: block;
+      width: 185px; /* Ancho del texto dentro del botón */
+      height: 21px; /* Altura del texto */
+      line-height: 21px; /* Alineación vertical del texto */
+      margin: 0 auto; /* Centrar horizontalmente */
+    }
+  
+    .buttons button:hover {
+      background-color: white;
+      color: #E12030;
+    }
+</style>
+  
+<div class="container">
+    <div class="title">
+      <h1 class="black-text">TAKE THE</h1>
+      <h1 class="white-text">NEXT STEP</h1>
+    </div>
+    <div class="buttons">
+      <button><span>REQUEST INFO</span></button>
+      <button><span>VISIT</span></button>
+      <button><span>APPLY</span></button>
+    </div>
+</div>

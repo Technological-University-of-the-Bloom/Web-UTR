@@ -5,6 +5,8 @@ import HeadText from '../../components/HeadText.astro';
 import Topbar from '../../components/Topbar.astro';
 import Video from '../../components/Video.astro';
 import ParagraphBody from '../../components/ParagraphBody.astro';
+import UnivesityData from '../../components/Univesity_Data.astro';
+import Information from '../../components/Information.astro';
 
 
 interface Props {
@@ -40,6 +42,10 @@ const { title } = Astro.props;
 			  <Video/>
 			  <HeadText bigTitle="University"/>
 			  <Placard/>
+			  <UnivesityData/>
+			  <Carousel/>
+			  <HeadText smallTitle="UTR"/>
+			  <Information/>
 			</main>
 	</body>
 </html>
