@@ -1,3 +1,7 @@
+---
+const { smallTitle, bigTitle, imgSrc ="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" } = Astro.props;
+---
+
 <html lang="es">
   <head>
     <style>
@@ -43,8 +47,15 @@
       .text-overlay h2 {
         font-size: 36px;
         margin: 0;
-        color: #000;
         line-height: 1.2;
+      }
+
+      .text-overlay .titulo1 {
+        color: #000; /* Color negro */
+      }
+
+      .text-overlay .titulo2 {
+        color: #E30613; /* Color rojo */
       }
 
       .text-overlay p {
@@ -61,13 +72,14 @@
   <body>
     <div class="container">
       <!-- Imagen de fondo -->
-      <img class="background-image" src="https://via.placeholder.com/1920x400.png?text=Background+Image" alt="Imagen de fondo">
+      <img class="background-image" src={imgSrc} alt="Imagen de fondo">
       
       <!-- Texto sobrepuesto -->
       <div class="text-overlay">
-        <h2>Utr webside<br>THE PLACE</h2>
+        <h2><span class="titulo1">{smallTitle}</span><br><span class="titulo2">{bigTitle}</span></h2>
         <p>Are you <strong>Proudly</strong><br><strong>UTR?</strong></p>
       </div>
     </div>
   </body>
 </html>
+

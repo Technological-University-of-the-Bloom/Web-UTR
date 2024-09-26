@@ -1,14 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Home from '../layouts/Mobile/Home.astro';
 import Topbar from '../components/Topbar.astro';
-import Securities from '../components/Securities.astro';
+import Titles from '../components/Titles.astro';
 import Carousel from '../components/Carousel.astro';
 import Text from '../components/Text.astro';
 import Video from '../components/Video.astro';
 import Placard from '../components/Placard.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Home title="Welcome to Astro.">
 	<style>
 	  main {
 		display: flex;
@@ -19,12 +19,12 @@ import Placard from '../components/Placard.astro';
   
 	<main>
 	  <Topbar/>
-	  <Securities/>
+	  <Titles smallTitle="pipi"/>
 	  <Text/>
 	  <Carousel/>
 	  <Video/>
 	  <Text/>
 	  <Placard/>
 	</main>
-  </Layout>
+  </Home>
 
