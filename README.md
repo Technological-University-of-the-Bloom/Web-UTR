@@ -1,4 +1,4 @@
-# 🎨 UTR Website Redesign
+![alt text](https://github.com/CaptDany/UTR-website-2/blob/main/banner.png?raw=true)
 
 Welcome to the UTR Website Redesign project! We’re on a mission to transform our university’s webpage into a modern, visually stunning hub of information. Using **Astro** and **Node.js**, we’re creating an experience that’s not just functional but also fun!
 
