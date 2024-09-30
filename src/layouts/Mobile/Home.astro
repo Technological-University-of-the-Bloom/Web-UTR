@@ -5,12 +5,13 @@ import HeadText from '../../components/HeadText.astro';
 import Topbar from '../../components/Topbar.astro';
 import Video from '../../components/Video.astro';
 import ParagraphBody from '../../components/ParagraphBody.astro';
-import UnivesityData from '../../components/Univesity_Data.astro';
-import Information from '../../components/Information.astro';
+import UnivesityData from '../../components/UnivesityData.astro';
 import News from '../../components/News.astro';
+import Button from '../../components/Button.astro';
+import Polices from '../../components/Polices.astro';
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -18,47 +19,49 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<style>
-		main {
-		  display: flex;
-		  flex-direction: column;
-		  gap: 50px; /* Espaciado de 50px entre componentes */
-		}
-	  </style>
-	<body>  
-			<main>
-			  <Topbar/>
-			  <HeadText smallTitle="UTR"/>
-			  <ParagraphBody content="Wildcat"/>
-			  <Carousel/>
-			  <Video/>
-			  <HeadText bigTitle="University"/>
-			  <Placard/>
-			  <UnivesityData/>
-			  <Carousel/>
-			  <HeadText smallTitle="UTR"/>
-
-			  <News date="27/09/2020" mainContent="UTR webside start to devoloper"/>
-			  <a>See all news<a/>
-<div class="imagenes-contenedor" style="display: flex;">
-  <div class="imagen-contenedor">
-    <img src="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/OP1.jpeg" alt="Imagen 1" class="imagen" />
-  </div>
-  <div class="imagen-contenedor">
-    <img src="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/OP4.jpeg" alt="Imagen 2" class="imagen" />
-  </div>
-</div>
-
-			  <Information/>
-			</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 50px; /* Espaciado de 50px entre componentes */
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 30px; /* Espaciado de 50px entre los botones */
+      align-items: center; /* Centra los botones horizontalmente */
+    }
+  </style>
+  <body>  
+    <main>
+      <Topbar/>
+      <HeadText smallTitle="UTR"/>
+      <ParagraphBody content="Wildcat"/>
+      <Carousel/>
+      <Video/>
+      <HeadText bigTitle="University"/>
+      <Placard/>
+      <UnivesityData/>
+      <Carousel/>
+      <HeadText smallTitle="UTR"/>
+      <News/>
+      <div class="button-container">
+        <h2>Take the Next Step</h2>
+        <div class="buttons">
+          <Button label="REQUEST INFO" />
+          <Button label="VISIT" />
+          <Button label="APPLY NOW" />
+        </div>
+      </div>
+      <Polices/>
+    </main>
+  </body>
 </html>
-
