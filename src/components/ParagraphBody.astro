@@ -1,5 +1,13 @@
 ---
-const { content } = Astro.props;
+const { content, textColor, bgColor } = Astro.props;
+
+let textClass;
+
+if (textColor === "black") {
+  textClass = "black-text";
+} else {
+  textClass = "default-text"; // Provide a default value if needed
+}
 ---
 
 <html lang="es">

@@ -7,8 +7,6 @@ import Video from '../../components/Video.astro';
 import ParagraphBody from '../../components/ParagraphBody.astro';
 import UnivesityData from '../../components/Univesity_Data.astro';
 import Information from '../../components/Information.astro';
-import News from '../../components/News.astro';
-import Polices from '../../components/Polices.astro';
 
 
 interface Props {
@@ -47,17 +45,16 @@ const { title } = Astro.props;
 			  <UnivesityData/>
 			  <Carousel/>
 			  <HeadText smallTitle="UTR"/>
+
 			  <News date="27/09/2020" mainContent="UTR webside start to devoloper"/>
 			  <a>See all news<a/>
 				<div class="imagen-contenedor">
     <img src="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/OP1.jpeg" alt="Imagen 1" class="imagen" />
   </div>
-  
   <div class="imagen-contenedor">
     <img src="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/OP4.jpeg" alt="Imagen 2" class="imagen" />
   </div>
 			  <Information/>
-			  <Polices/>
 			</main>
 	</body>
 </html>
