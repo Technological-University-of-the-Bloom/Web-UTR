@@ -1,12 +1,12 @@
 ---
 const { content, textColor, bgColor } = Astro.props;
 
-let textClass;
+let textHex;
 
 if (textColor === "black") {
-  textClass = "black-text";
-} else {
-  textClass = "default-text"; // Provide a default value if needed
+  textHex = "#000";
+} else if (textColor === "red") { textHex = "#E12030"} else {
+  textHex = "#E6E6E6"; // Provide a default value if needed
 }
 ---
 
@@ -17,20 +17,14 @@ if (textColor === "black") {
         font-weight: normal;
         font-style: normal;
       }
-
       body {
         font-family: 'Futura Book', Arial, sans-serif;
         font-size: 20px;
       }
-
-      .custom-text {
-        color: #333; /* Color del texto */
-        line-height: 1.5; /* Espaciado entre líneas */
-      }
     </style>
   </head>
   <body>
-    <div class="custom-text">
+    <div class="custom-text" style={`color: ${textHex};`}>
         {content}
     </div>
   </body>

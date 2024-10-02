@@ -31,6 +31,7 @@ const { title } = Astro.props;
       display: flex;
       flex-direction: column;
       gap: 50px; /* Espaciado de 50px entre componentes */
+      color: #ffffff; /* Texto blanco por defecto para el main */
     }
     .buttons {
       display: flex;
@@ -41,14 +42,30 @@ const { title } = Astro.props;
     .footer-info {
       display: flex;
       flex-direction: column;
-      gap: 50px; /* Espaciado de 10px entre los párrafos */ 
+      gap: 50px; /* Espaciado de 50px entre los párrafos */
+      align-items: center; /* Centra el contenido horizontalmente */
     }
-	
+    .container {
+      width: 350px;
+      height: 956px;
+      margin: 0 auto; /* Centrar el contenedor horizontalmente */
+      background-color: #000000; /* Fondo negro */
+      color: #ffffff; /* Texto blanco */
+      border: 1px solid #000000; /* Borde opcional para ver el contenedor */
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px; /* Espaciado de 50px entre los elementos dentro del contenedor */
+    }
+
+    h2 {
+      color: #ffffff; /* Asegurar que el h2 sea blanco */
+    }
   </style>
   <body>  
     <main>
       <Topbar/>
-	  <HeadText bigTitle="wilcat" />
+      <HeadText bigTitle="wilcat" />
 
       <Carousel/>
       <Video/>
@@ -71,14 +88,14 @@ const { title } = Astro.props;
         </div>
       </div>
 
-      <!-- Nueva sección con div y múltiples ParagraphBody -->
-      <div class="footer-info">
-		  <!-- Footer del contenido -->
-	   <!-- Título principal -->
-	   <ParagraphBody content="Notice of Nondiscriminatory Policy" />
-	   <!-- Contenido del aviso -->
-	   <ParagraphBody content="Universidad Tecnológica El Retoño admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at the school. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs."/>
-        <ParagraphBody content="Universidad Tecnológica El Retoño" />
+      <!-- Nueva sección con contenedor personalizado -->
+      <div class="container">
+        <!-- Footer del contenido -->
+        <!-- Título principal -->
+        <ParagraphBody content="Notice of Nondiscriminatory Policy" />
+        <!-- Contenido del aviso -->
+        <ParagraphBody  content="Universidad Tecnológica El Retoño admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at the school. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs."/>
+        <ParagraphBody  content="Universidad Tecnológica El Retoño" />
         <ParagraphBody content="Carretera a San Luis Potosí km. 68\nComunidad El Retoño\n20337, El Retoño, Aguascalientes." />
         <ParagraphBody content="449 7860 984" />
         <ParagraphBody content="contacto@utr.edu.mx" />
