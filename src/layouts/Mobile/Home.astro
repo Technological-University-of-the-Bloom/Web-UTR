@@ -8,7 +8,6 @@ import ParagraphBody from '../../components/ParagraphBody.astro';
 import UnivesityData from '../../components/UnivesityData.astro';
 import News from '../../components/News.astro';
 import Button from '../../components/Button.astro';
-import Polices from '../../components/Polices.astro';
 
 interface Props {
   title: string;
@@ -36,23 +35,33 @@ const { title } = Astro.props;
     .buttons {
       display: flex;
       flex-direction: column;
-      gap: 30px; /* Espaciado de 50px entre los botones */
+      gap: 30px; /* Espaciado de 30px entre los botones */
       align-items: center; /* Centra los botones horizontalmente */
     }
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 50px; /* Espaciado de 10px entre los párrafos */ 
+    }
+	
   </style>
   <body>  
     <main>
       <Topbar/>
-      <HeadText smallTitle="UTR"/>
-      <ParagraphBody content="Wildcat"/>
+	  <HeadText bigTitle="wilcat" />
+
       <Carousel/>
       <Video/>
+      
       <HeadText bigTitle="University"/>
       <Placard/>
       <UnivesityData/>
+
       <Carousel/>
       <HeadText smallTitle="UTR"/>
       <News/>
+      
+      <!-- Botones de acciones -->
       <div class="button-container">
         <h2>Take the Next Step</h2>
         <div class="buttons">
@@ -61,7 +70,21 @@ const { title } = Astro.props;
           <Button label="APPLY NOW" />
         </div>
       </div>
-      <Polices/>
+
+      <!-- Nueva sección con div y múltiples ParagraphBody -->
+      <div class="footer-info">
+		  <!-- Footer del contenido -->
+	   <!-- Título principal -->
+	   <ParagraphBody content="Notice of Nondiscriminatory Policy" />
+	   <!-- Contenido del aviso -->
+	   <ParagraphBody content="Universidad Tecnológica El Retoño admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at the school. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs."/>
+        <ParagraphBody content="Universidad Tecnológica El Retoño" />
+        <ParagraphBody content="Carretera a San Luis Potosí km. 68\nComunidad El Retoño\n20337, El Retoño, Aguascalientes." />
+        <ParagraphBody content="449 7860 984" />
+        <ParagraphBody content="contacto@utr.edu.mx" />
+        <ParagraphBody content="Universidad Tecnológica El Retoño ©2024" />
+      </div>
+
     </main>
   </body>
 </html>
