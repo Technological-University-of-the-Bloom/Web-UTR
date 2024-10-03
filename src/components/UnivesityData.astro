@@ -1,28 +1,30 @@
 ---
 const stats = [
-  { number: '13', label: 'Undergrad majors' },
-  { number: '800', label: 'Current Students' },
-  { number: '983', label: 'Graduates' },
-  { number: '13k+', label: 'Students enrolled' },
-  { number: '5+', label: 'Countries for study' },
-  { number: '#1', label: 'Salary potential in Aguascalientes' },
-  { number: '#1', label: 'Largest VR Centre in Latam' }
+  { number: "13", label: "Undergrad majors" },
+  { number: "800", label: "Current Students" },
+  { number: "983", label: "Graduates" },
+  { number: "13k+", label: "Students enrolled" },
+  { number: "5+", label: "Countries for study" },
+  { number: "#1", label: "Salary potential in Aguascalientes" },
+  { number: "#1", label: "Largest VR Centre in Latam" },
 ];
 ---
 
 <div class="stats-container">
-  {stats.map((stat) => (
-    <div class="stat">
-      <span class="stat-number">{stat.number}</span>
-      <span class="stat-label">{stat.label}</span>
-    </div>
-  ))}
+  {
+    stats.map((stat) => (
+      <div class="stat">
+        <span class="stat-number">{stat.number}</span>
+        <span class="stat-label">{stat.label}</span>
+      </div>
+    ))
+  }
 </div>
 
 <style>
   @font-face {
-    font-family: 'Futura Book';
-    src: url('/path/to/font/Futura-Book.ttf') format('truetype');
+    font-family: "Futura Book";
+    src: url("/public/futura/Futura\ Book\ font.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
   }
@@ -32,11 +34,11 @@ const stats = [
     flex-direction: column;
     background-color: #181818; /* Dark background */
     padding: 50px;
-    color: #E6E6E6;
+    color: #e6e6e6;
     width: 393px; /* Adjust width */
     height: 740px; /* Adjust height */
     justify-content: space-around; /* Ensure even spacing */
-    font-family: 'Futura Book', sans-serif; /* Use Futura Book font */
+    font-family: "Futura Book", sans-serif; /* Use Futura Book font */
   }
 
   .stat {
@@ -56,8 +58,8 @@ const stats = [
 
   .stat-label {
     font-size: 80px;
-    color: #E6E6E6; /* Slightly lighter color for text */
-    
+    color: #e6e6e6; /* Slightly lighter color for text */
+
     width: 217px;
   }
 
