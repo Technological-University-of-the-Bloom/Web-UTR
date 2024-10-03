@@ -178,3 +178,20 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, div {
     font-family: 'Futura', sans-serif;
 }
 
+/*red background*/
+.bg-red {
+    background-color: #e12030; 
+    color: white; 
+}
+
+/*black background*/
+.bg-black {
+    background-color: #000000;
+    color: white;
+}
+
+/*white background*/
+.bg-white {
+    background-color: #ffffff; 
+    color: #000000; 
+}
