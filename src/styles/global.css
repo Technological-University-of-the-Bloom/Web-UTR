@@ -41,8 +41,12 @@ h6 {
 .subtitle {
   font-size: 2rem;
 }
-h3 {
-  font-size: 1.75rem;
+.text {
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  display: "flex";
+  flex-direction: column;
 }
 h4 {
   font-size: 1.5rem;
@@ -152,6 +156,15 @@ p {
 
 .visible {
   display: block;
+}
+.background {
+  display: flex;
+  flex-direction: column;
+  background-color: #e12030;
+  padding: 20px;
+  color: #e6e6e6;
+  width: 393px; /* Adjust width */
+  height: 540px; /* Adjust height */
 }
 @font-face {
   font-family: "Futura";

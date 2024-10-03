@@ -34,7 +34,7 @@ const { title } = Astro.props;
       .buttons {
         display: flex;
         flex-direction: column;
-        gap: 30px; /* Espaciado de 30px entre los botones */
+        gap: 20px; /* Espaciado de 30px entre los botones */
         align-items: center; /* Centra los botones horizontalmente */
       }
       .footer-info {
@@ -52,7 +52,7 @@ const { title } = Astro.props;
         padding: 20px;
         display: flex;
         flex-direction: column;
-        gap: 50px; /* Espaciado de 50px entre los elementos dentro del contenedor */
+        gap: 20px; /* Espaciado de 50px entre los elementos dentro del contenedor */
       }
 
       h2 {
@@ -77,14 +77,15 @@ const { title } = Astro.props;
       <HeadText smallTitle="UTR" />
       <News />
 
-      <!-- Botones de acciones -->
-      <div class="button-container">
-        <h2 class="title" style="color: #ff0000;">Take The</h2>
-        <h2 class="title" style="color: #000000;">Next Step</h2>
-        <div class="buttons">
-          <Button label="REQUEST INFO" />
-          <Button label="VISIT" />
-          <Button label="APPLY NOW" />
+      <div class="background">
+        <div class="button-container">
+          <h3 class="text" style="color: #ffffff;">TAKE THE</h3>
+          <h3 class="text" style="color: #000000;">NEXT STEP</h3>
+          <div class="buttons">
+            <Button label="REQUEST INFO" />
+            <Button label="VISIT" />
+            <Button label="APPLY NOW" />
+          </div>
         </div>
       </div>
 
