@@ -35,7 +35,7 @@ h6 {
   margin-bottom: 20px;
 }
 
-h1 {
+.title {
   font-size: 2.5rem;
 }
 h2 {
@@ -152,4 +152,10 @@ p {
 
 .visible {
   display: block;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("/public/futura/Futura\ Book\ font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
