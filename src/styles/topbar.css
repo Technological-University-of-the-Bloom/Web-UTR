@@ -1,6 +1,5 @@
 /* Fondo blanco, agregar las imágenes, nada con sombras, que sea estática */
 /* https://em-content.zobj.net/source/twitter/53/flag-for-mexico_1f1f2-1f1fd.png */
-
 .topbar {
     display: flex;
     justify-content: space-between;

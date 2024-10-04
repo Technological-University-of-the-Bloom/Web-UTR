@@ -1,110 +1,125 @@
 ---
+import CarouselSlide from "./Carousel/CarouselSlide.astro";
+import Photo from "./Carousel/Photo.astro";
+
 ---
-<html lang="es">
-  <head>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+
+<carousel-wrapper>
+  <div class="carousel">
+    <button class="carousel__button carousel__button--prev" id="prevLink" aria-label="Go to previous slide">←</button>
+
+    <ul class="carousel__slides" id="slides">
+      <Photo />
+    </ul>
+
+    <button class="carousel__button carousel__button--next" id="nextLink" aria-label="Go to next slide">→</button>
+  </div>
+</carousel-wrapper>
+
+<script>
+  class CarouselWrapper extends HTMLElement {
+    currentIndex;
+    slides: any[] | NodeListOf<Element>;
+    prevButton!: Element | null;
+    nextButton!: Element | null;
+    intervalId: string | number | NodeJS.Timeout | undefined; 
+    constructor() {
+      super();
+      this.currentIndex = 0;
+      this.slides = [];
+    }
+
+    connectedCallback() {
+      
+      this.slides = this.querySelectorAll(".carousel__slides li");
+      this.prevButton = this.querySelector("#prevLink");
+      this.nextButton = this.querySelector("#nextLink");
+
+  
+      if (this.prevButton && this.nextButton) {
+        // Asignamos eventos de click a los botones
+        this.prevButton.addEventListener("click", () => this._prevSlide());
+        this.nextButton.addEventListener("click", () => this._nextSlide());
       }
 
-      body, html {
-        width: 100%;
-        height: 100%;
-        font-family: Arial, sans-serif;
-      }
+     
+      this._updateSlideVisibility();
 
-      .carousel-container {
-        width: 100%;
-        max-width: 800px;
-        margin: 50px auto; /* Centra el carrusel horizontalmente */
-        overflow: hidden;
-        border-radius: 10px;
-        position: relative;
-      }
 
-      .carousel-track {
-        display: flex;
-        width: 100%;
-        height: 400px;
-        transition: transform 0.5s ease-in-out;
-      }
+      this.intervalId = setInterval(() => this._nextSlide(), 3000);
+    }
 
-      .carousel-item {
-        min-width: 100%;
-        height: 100%;
-      }
+    disconnectedCallback() {
+      
+      clearInterval(this.intervalId);
+    }
 
-      .carousel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    _prevSlide() {
+      this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+      this._updateSlideVisibility();
+    }
 
-      /* Botones de control opcionales */
-      .carousel-control {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 30px;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        padding: 10px;
-        cursor: pointer;
-      }
+    _nextSlide() {
+      this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+      this._updateSlideVisibility();
+    }
 
-      .carousel-control.left {
-        left: 10px;
-      }
+    _updateSlideVisibility() {
+      this.slides.forEach((slide, index) => {
+        slide.style.display = index === this.currentIndex ? "block" : "none";
+      });
+    }
+  }
 
-      .carousel-control.right {
-        right: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="carousel-container">
-      <div class="carousel-track" id="carouselTrack">
-        <!-- Carrusel de imágenes -->
-        <div class="carousel-item">
-          <img src="https://via.placeholder.com/800x400.png?text=Image+1" alt="Imagen 1">
-        </div>
-        <div class="carousel-item">
-          <img src="https://via.placeholder.com/800x400.png?text=Image+2" alt="Imagen 2">
-        </div>
-        <div class="carousel-item">
-          <img src="https://via.placeholder.com/800x400.png?text=Image+3" alt="Imagen 3">
-        </div>
-      </div>
+  customElements.define("carousel-wrapper", CarouselWrapper);
+</script>
 
-      <!-- Botones de control (opcional) -->
-      <div class="carousel-control left" onclick="moveLeft()">‹</div>
-      <div class="carousel-control right" onclick="moveRight()">›</div>
-    </div>
+<style>
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
 
-    <script>
-      let currentIndex = 0;
-      const track = document.getElementById('carouselTrack')!;  // Operador "!" asegura que no es null
-      const totalItems = document.querySelectorAll('.carousel-item').length;
 
-      function moveRight() {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
-      }
+  .carousel__slides {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+  }
 
-      function moveLeft() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        updateCarousel();
-      }
+ 
+  .carousel__button {
+    background-color: rgba(255, 255, 255, 0.8); 
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem; 
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; 
+  }
 
-      function updateCarousel() {
-        const offset = -currentIndex * 100;
-        track.style.transform = `translateX(${offset}%)`;
-      }
 
-      // Rotación automática cada 3 segundos
-      setInterval(moveRight, 3000);
-    </script>
-  </body>
-</html>
+  .carousel__button--prev {
+    left: 10px;
+  }
+
+  .carousel__button--next {
+    right: 10px; 
+  }
+
+
+  li {
+    width: 100%;
+    height: auto;
+  }
+</style>

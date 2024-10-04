@@ -1,5 +1,5 @@
 ---
-const { date, mainContent } = Astro.props;
+const { date, mainContent, title } = Astro.props;
 ---
 
 <html lang="es">
@@ -26,6 +26,13 @@ const { date, mainContent } = Astro.props;
         color: #333;
       }
 
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 5px;
+        color: #000;
+      }
+
       .main-content {
         font-size: 16px;
         font-weight: bold;
@@ -38,6 +45,9 @@ const { date, mainContent } = Astro.props;
     <div class="container">
       <div class="date">
         {date}
+      </div>
+      <div class="title">
+        {title}
       </div>
       <div class="main-content">
         {mainContent}

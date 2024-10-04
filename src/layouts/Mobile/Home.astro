@@ -1,16 +1,15 @@
 ---
-import Carousel from '../../components/Carousel.astro';
-import Placard from '../../components/Placard.astro';
-import HeadText from '../../components/HeadText.astro';
-import Topbar from '../../components/Topbar.astro';
-import Video from '../../components/Video.astro';
-import ParagraphBody from '../../components/ParagraphBody.astro';
-import UnivesityData from '../../components/Univesity_Data.astro';
-import Information from '../../components/Information.astro';
-import News from '../../components/News.astro';
+import Carousel from "../../components/Carousel.astro";
+import HeadText from "../../components/HeadText.astro";
+import Topbar from "../../components/Topbar.astro";
+import Video from "../../components/Video.astro";
+import ParagraphBody from "../../components/ParagraphBody.astro";
+import UnivesityData from "../../components/UnivesityData.astro";
+import News from "../../components/News.astro";
+import Button from "../../components/Button.astro";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -18,44 +17,95 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<style>
-		main {
-		  display: flex;
-		  flex-direction: column;
-		  gap: 50px; /* Espaciado de 50px entre componentes */
-		}
-	  </style>
-	<body>  
-			<main>
-			  <Topbar/>
-			  <HeadText smallTitle="UTR"/>
-			  <ParagraphBody content="Wildcat"/>
-			  <Carousel/>
-			  <Video/>
-			  <HeadText bigTitle="University"/>
-			  <Placard/>
-			  <UnivesityData/>
-			  <Carousel/>
-			  <HeadText smallTitle="UTR"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 50px; /* Espaciado de 50px entre componentes */
+        color: #ffffff; /* Texto blanco por defecto para el main */
+      }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Espaciado de 30px entre los botones */
+        align-items: center; /* Centra los botones horizontalmente */
+      }
+      .footer-info {
+        display: flex;
+        flex-direction: column;
+        gap: 50px; /* Espaciado de 50px entre los párrafos */
+        align-items: center; /* Centra el contenido horizontalmente */
+      }
+      .container {
+        width: 393px;
+        height: 956px;
+        margin: 0 auto; /* Centrar el contenedor horizontalmente */
+        background-color: #000000; /* Fondo negro */
+        border: 1px solid #000000; /* Borde opcional para ver el contenedor */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Espaciado de 50px entre los elementos dentro del contenedor */
+      }
 
-			  <News date="27/09/2020" mainContent="UTR webside start to devoloper"/>
-			  <a>See all news<a/>
-				<div class="imagen-contenedor">
-    <img src="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/OP1.jpeg" alt="Imagen 1" class="imagen" />
-  </div>
-  <div class="imagen-contenedor">
-    <img src="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/OP4.jpeg" alt="Imagen 2" class="imagen" />
-  </div>
-			  <Information/>
-			</main>
-	</body>
+      h2 {
+        color: #ffffff; /* Asegurar que el h2 sea blanco */
+      }
+    </style></head
+  >
+
+  <body>
+    <main>
+      <Topbar />
+      <HeadText bigTitle="wilcat" />
+
+      <Carousel />
+      <Video />
+
+      <HeadText bigTitle="University" />
+      <Button label="EXPLORE OUR PROGRAMES" />
+      <UnivesityData />
+
+      <Carousel />
+      <HeadText smallTitle="UTR" />
+      <News />
+
+      <div class="background">
+        <div class="button-container">
+          <h3 class="text" style="color: #ffffff;">TAKE THE</h3>
+          <h3 class="text" style="color: #000000;">NEXT STEP</h3>
+          <div class="buttons">
+            <Button label="REQUEST INFO" />
+            <Button label="VISIT" />
+            <Button label="APPLY NOW" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Nueva sección con contenedor personalizado -->
+      <div class="container">
+        <!-- Footer del contenido -->
+        <!-- Título principal -->
+        <ParagraphBody content="Notice of Nondiscriminatory Policy" />
+        <!-- Contenido del aviso -->
+        <ParagraphBody
+          content="Universidad Tecnológica El Retoño admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at the school. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs."
+        />
+        <ParagraphBody content="Universidad Tecnológica El Retoño" />
+        <ParagraphBody
+          content="Carretera a San Luis Potosí km. 68\nComunidad El Retoño\n20337, El Retoño, Aguascalientes."
+        />
+        <ParagraphBody content="449 7860 984" />
+        <ParagraphBody content="contacto@utr.edu.mx" />
+        <ParagraphBody content="Universidad Tecnológica El Retoño ©2024" />
+      </div>
+    </main>
+  </body>
 </html>
-
