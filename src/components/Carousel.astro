@@ -1,5 +1,4 @@
 ---
-// Componente Principal
 import CarouselSlide from "./Carousel/CarouselSlide.astro";
 import Photo from "./Carousel/Photo.astro";
 
@@ -23,36 +22,35 @@ import Photo from "./Carousel/Photo.astro";
     slides: any[] | NodeListOf<Element>;
     prevButton!: Element | null;
     nextButton!: Element | null;
-    intervalId: string | number | NodeJS.Timeout | undefined; // ID del intervalo para la rotación automática
-
+    intervalId: string | number | NodeJS.Timeout | undefined; 
     constructor() {
       super();
-      this.currentIndex = 0; // Inicializamos el índice en 0
-      this.slides = []; // Inicializamos slides como un array
+      this.currentIndex = 0;
+      this.slides = [];
     }
 
     connectedCallback() {
-      // Obtenemos los slides y botones de la interfaz
+      
       this.slides = this.querySelectorAll(".carousel__slides li");
       this.prevButton = this.querySelector("#prevLink");
       this.nextButton = this.querySelector("#nextLink");
 
-      // Aseguramos que prevButton y nextButton no sean null
+  
       if (this.prevButton && this.nextButton) {
         // Asignamos eventos de click a los botones
         this.prevButton.addEventListener("click", () => this._prevSlide());
         this.nextButton.addEventListener("click", () => this._nextSlide());
       }
 
-      // Actualizamos la visibilidad de los slides
+     
       this._updateSlideVisibility();
 
-      // Inicia la rotación automática cada 3 segundos
+
       this.intervalId = setInterval(() => this._nextSlide(), 3000);
     }
 
     disconnectedCallback() {
-      // Limpia el intervalo al desconectar el componente
+      
       clearInterval(this.intervalId);
     }
 
@@ -77,17 +75,17 @@ import Photo from "./Carousel/Photo.astro";
 </script>
 
 <style>
-  /* Estilos del carrusel */
+  
   .carousel {
     display: flex;
-    align-items: center; /* Alinea verticalmente */
+    align-items: center;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    position: relative; /* Necesario para posicionar las flechas */
+    position: relative;
   }
 
-  /* Estilos de las slides */
+
   .carousel__slides {
     list-style: none;
     padding: 0;
@@ -97,29 +95,29 @@ import Photo from "./Carousel/Photo.astro";
     overflow: hidden;
   }
 
-  /* Estilos de los botones */
+ 
   .carousel__button {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    background-color: rgba(255, 255, 255, 0.8); 
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    padding: 0.5rem; /* Espaciado */
-    position: absolute; /* Posiciona las flechas */
-    top: 50%; /* Centra verticalmente */
-    transform: translateY(-50%); /* Ajusta el centrado */
-    z-index: 1; /* Asegura que las flechas estén encima */
+    padding: 0.5rem; 
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; 
   }
 
-  /* Posiciona las flechas */
+
   .carousel__button--prev {
-    left: 10px; /* Espaciado del lado izquierdo */
+    left: 10px;
   }
 
   .carousel__button--next {
-    right: 10px; /* Espaciado del lado derecho */
+    right: 10px; 
   }
 
-  /* Estilos para los elementos de lista */
+
   li {
     width: 100%;
     height: auto;
