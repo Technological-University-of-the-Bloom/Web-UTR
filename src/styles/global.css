@@ -41,9 +41,13 @@ h6 {
 .subtitle {
   font-size: 2rem;
 }
-h3 {
-  font-size: 1.75rem;
+@font-face {
+    font-family: "Futura";
+    src: url("/public/futura/Futura\ Book\ font.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
+
 h4 {
   font-size: 1.5rem;
 }
@@ -153,9 +157,35 @@ p {
 .visible {
   display: block;
 }
-@font-face {
-  font-family: "Futura";
-  src: url("/public/futura/Futura\ Book\ font.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+.background {
+  display: flex;
+  flex-direction: column;
+  background-color: #e12030;
+  padding: 20px;
+  color: #e6e6e6;
+  width: 393px; /* Adjust width */
+  height: 540px; /* Adjust height */
+}
+
+/*Global font Futura*/
+body, h1, h2, h3, h4, h5, h6, p, a, span, div {
+    font-family: 'Futura', sans-serif;
+}
+
+/*red background*/
+.bg-red {
+    background-color: #e12030; 
+    color: white; 
+}
+
+/*black background*/
+.bg-black {
+    background-color: #000000;
+    color: white;
+}
+
+/*white background*/
+.bg-white {
+    background-color: #ffffff; 
+    color: #000000; 
 }

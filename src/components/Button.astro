@@ -7,37 +7,37 @@ const { label } = Astro.props; // El prop 'label' pasará el texto de cada botó
   .buttons {
     display: flex;
     flex-direction: column;
-    gap: 50px; /* Separación de 50px entre cada botón */
+    gap: 20px; /* Separación de 20px entre cada botón */
     align-items: center; /* Centra los botones horizontalmente */
-    width: 100%; /* Ocupa todo el ancho del contenedor */
   }
 
   button {
     background-color: transparent;
-    border: 2px solid rgb(0, 0, 0); /* Mantiene el borde negro */
-    color: rgb(0, 0, 0); /* Texto en negro */
+    border: 2px solid rgb(255, 255, 255); /* Mantiene el borde blanco */
+    color: rgb(255, 255, 255); /* Texto en blanco */
     padding: 0.75rem;
-    font-size: 1.25rem;
-    font-weight: bold; /* Negrita para los textos de los botones */
     cursor: pointer;
     border-radius: 0 0 0 20px; /* Esquina inferior izquierda redondeada */
     transition: background-color 0.3s ease;
-    width: 100%; /* Los botones ocuparán todo el ancho disponible */
-    max-width: 349px; /* Ancho máximo del botón */
+    width: 349px; /* Ancho máximo del botón */
     height: 81px; /* Altura fija */
+    font-family: "Barlow", sans-serif; /* Aplicamos la fuente Barlow */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    align-items: center; /* Centrar verticalmente el contenido */
   }
 
   span {
-    display: block;
-    width: 185px; /* Ancho del texto dentro del botón */
-    height: 21px; /* Altura del texto */
-    line-height: 21px; /* Alineación vertical del texto */
-    margin: 0 auto; /* Centrar horizontalmente */
+    font-family: "Barlow", sans-serif; /* Aplicamos la fuente Barlow */
+    font-size: 2rem; /* Ajusta el tamaño de la fuente aquí */
+    width: auto; /* El ancho se ajustará al contenido */
+    height: auto; /* La altura se ajustará al contenido */
+    text-align: center; /* Centrar el texto */
   }
 
   button:hover {
     background-color: white; /* Cambia a blanco al pasar el mouse */
-    color: #E12030; /* Texto rojo al hacer hover */
+    color: #e12030; /* Texto rojo al hacer hover */
   }
 </style>
 
