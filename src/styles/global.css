@@ -41,13 +41,13 @@ h6 {
 .subtitle {
   font-size: 2rem;
 }
-.text {
-  font-family: "Barlow", sans-serif;
-  font-weight: bold;
-  font-size: 3rem;
-  display: "flex";
-  flex-direction: column;
+@font-face {
+    font-family: "Futura";
+    src: url("/public/futura/Futura\ Book\ font.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
+
 h4 {
   font-size: 1.5rem;
 }
@@ -165,12 +165,6 @@ p {
   color: #e6e6e6;
   width: 393px; /* Adjust width */
   height: 540px; /* Adjust height */
-}
-@font-face {
-  font-family: "Futura";
-  src: url("/public/futura/Futura\ Book\ font.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
 }
 
 /*Global font Futura*/
