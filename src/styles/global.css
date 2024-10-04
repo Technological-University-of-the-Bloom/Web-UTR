@@ -10,7 +10,7 @@ html,
 body {
   font-family: "Futura", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1;
   color: #000000;
   background-color: #ffffff;
 }
@@ -41,11 +41,19 @@ h6 {
 .subtitle {
   font-size: 2rem;
 }
+
+.text {
+  font-family: "Barlow", sans-serif; /* Aplicamos la fuente Barlow */
+  font-size: 3.5rem; /* Tamaño del texto */
+  margin: 0; /* Elimina el margen alrededor del texto */
+  padding: 0; /* Elimina cualquier padding adicional */
+}
+
 @font-face {
-    font-family: "Futura";
-    src: url("/public/futura/Futura\ Book\ font.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Futura";
+  src: url("/public/futura/Futura\ Book\ font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 h4 {
@@ -168,24 +176,34 @@ p {
 }
 
 /*Global font Futura*/
-body, h1, h2, h3, h4, h5, h6, p, a, span, div {
-    font-family: 'Futura', sans-serif;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div {
+  font-family: "Futura", sans-serif;
 }
 
 /*red background*/
 .bg-red {
-    background-color: #e12030; 
-    color: white; 
+  background-color: #e12030;
+  color: white;
 }
 
 /*black background*/
 .bg-black {
-    background-color: #000000;
-    color: white;
+  background-color: #000000;
+  color: white;
 }
 
 /*white background*/
 .bg-white {
-    background-color: #ffffff; 
-    color: #000000; 
+  background-color: #ffffff;
+  color: #000000;
 }

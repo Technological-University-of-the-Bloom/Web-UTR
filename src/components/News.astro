@@ -1,5 +1,12 @@
 ---
-const { date, mainContent, title } = Astro.props;
+const { date, mainContent, title, link } = Astro.props;
+//const { data } = Astro.props;
+
+const defaultNews = [
+  { date: "2024-10-01", title: "Noticia 1", mainContent: "Contenido de la noticia 1" },
+  { date: "2024-10-02", title: "Noticia 2", mainContent: "Contenido de la noticia 2" },
+  { date: "2024-10-03", title: "Noticia 3", mainContent: "Contenido de la noticia 3" }
+];
 ---
 
 <html lang="es">
