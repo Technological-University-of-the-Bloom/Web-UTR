@@ -1,0 +1,31 @@
+---
+import CarouselSlide from "./CarouselSlide.astro";
+
+// Photo.astro
+const placeholderImages = [
+  { src: "https://via.placeholder.com/600x400?text=Imagen+1", alt: "Imagen 1" },
+  { src: "https://via.placeholder.com/600x400?text=Imagen+2", alt: "Imagen 2" },
+  { src: "https://via.placeholder.com/600x400?text=Imagen+3", alt: "Imagen 3" },
+];
+
+---
+
+<ul>
+  {placeholderImages.map((image, i) => (
+    <li style={`display: ${i === 0 ? 'block' : 'none'};`}>
+      <CarouselSlide src={image.src} alt={image.alt} />
+    </li>
+  ))}
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: none; /* Ocultamos las imágenes, se mostrarán en el carrusel */
+  }
+</style>
