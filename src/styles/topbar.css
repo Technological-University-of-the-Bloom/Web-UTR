@@ -28,6 +28,12 @@
 .flag-container {
     position: absolute;
     left: 10px;
+    width: 20px; 
+    height: 20px; 
+    background-image: url('https://em-content.zobj.net/source/twitter/53/flag-for-mexico_1f1f2-1f1fd.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .center-logo {
@@ -40,3 +46,4 @@
     position: absolute;
     right: 10px;
 }
+
