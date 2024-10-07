@@ -65,6 +65,9 @@ const { title } = Astro.props;
     <main>
       <Topbar />
       <HeadText bigTitle="wilcat" />
+      <ParagraphBody
+        content="Universidad Tecnológica El Retoño is a new alternative for higher education. At UTR, we believe in your potential to transform, innovate, and thrive."
+      />
 
       <Carousel />
       <Video />
@@ -102,18 +105,32 @@ const { title } = Astro.props;
       <div class="container">
         <!-- Footer del contenido -->
         <!-- Título principal -->
-        <ParagraphBody content="Notice of Nondiscriminatory Policy" />
+        <p class="Paragraph" style="padding: 20px 0 30px 0;">
+          Notice of Nondiscriminatory Policy
+        </p>
         <!-- Contenido del aviso -->
-        <ParagraphBody
-          content="Universidad Tecnológica El Retoño admits students of any race, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at the school. It does not discriminate on the basis of race, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs."
-        />
-        <ParagraphBody content="Universidad Tecnológica El Retoño" />
-        <ParagraphBody
-          content="Carretera a San Luis Potosí km. 68\nComunidad El Retoño\n20337, El Retoño, Aguascalientes."
-        />
-        <ParagraphBody content="449 7860 984" />
-        <ParagraphBody content="contacto@utr.edu.mx" />
-        <ParagraphBody content="Universidad Tecnológica El Retoño ©2024" />
+        <p class="Paragraph">
+          Universidad Tecnológica El Retoño admits students of any race, color,
+          national and ethnic origin to all the rights, privileges, programs,
+          and activities generally accorded or made available to students at the
+          school. It does not discriminate on the basis of race, color, national
+          and ethnic origin in administration of its educational policies,
+          admissions policies, scholarship and loan programs, and athletic and
+          other school-administered programs.
+        </p>
+        <p class="Information">Universidad Tecnológica El Retoño</p>
+        <p class="Information">
+          Carretera a San Luis Potosí km. 68 Comunidad El Retoño 20337, El
+          Retoño, Aguascalientes.
+        </p>
+        <p class="Information">449 7860 984</p>
+        <p class="Information">contacto@utr.edu.mx</p>
+        <p
+          class="Information"
+          style="color: #808080; font-size:18px; padding: 30px 0 0px 0"
+        >
+          Universidad Tecnológica El Retoño ©2024
+        </p>
       </div>
     </main>
   </body>
