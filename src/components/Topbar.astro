@@ -1,12 +1,14 @@
 ---
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
+import "../styles/topbar.css";
 ---
 
 <div class="topbar">
   <div class="flag-container">
     <a href="#">
       <img
+        class="icon"
         src="https://em-content.zobj.net/source/twitter/53/flag-for-mexico_1f1f2-1f1fd.png"
         alt="Bandera de México"
       />
@@ -25,57 +27,3 @@ import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
     </a>
   </div>
 </div>
-<style>
-  .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    border-bottom: 2px solid #e0e0e0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-  }
-
-  .topbar img {
-    height: 40px; /* Ajusta la altura del logo */
-  }
-
-  .flag-container,
-  .dropdown-container {
-    display: flex;
-    align-items: center;
-  }
-
-  .flag-container img {
-    height: 25px; /* Tamaño de la bandera */
-  }
-
-  .dropdown-container {
-    cursor: pointer;
-  }
-
-  .dropdown-container img {
-    height: 20px; /* Tamaño de la flecha */
-  }
-
-  .center-logo {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-  }
-
-  .center-logo img {
-    height: 35px; /* Tamaño del logo central */
-  }
-
-  /* Añade margen al contenido para que no quede oculto por la barra */
-  .content {
-    margin-top: 80px; /* Ajusta el margen según la altura de la topbar */
-  }
-</style>
