@@ -6,24 +6,24 @@ const { label, borderColor } = Astro.props; // El prop 'label' pasará el texto 
   .buttons {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Separación de 20px entre cada botón */
-    align-items: center; /* Centra los botones horizontalmente */
+    gap: 20px;
+    align-items: center;
   }
 
   button {
     background-color: transparent;
-    border: 2px solid; /* Se eliminará el color de borde predeterminado */
-    color: rgb(255, 255, 255); /* Texto en blanco como predeterminado */
+    border: 2px solid;
+    color: rgb(255, 255, 255);
     padding: 0.75rem;
     cursor: pointer;
-    border-radius: 0 0 0 20px; /* Esquina inferior izquierda redondeada */
+    border-radius: 0 0 0 20px;
     transition: background-color 0.3s ease;
-    width: 349px; /* Ancho máximo del botón */
-    height: 81px; /* Altura fija */
-    font-family: "Barlow", sans-serif; /* Aplicamos la fuente Barlow */
-    display: flex; /* Usar flexbox para centrar el contenido */
-    justify-content: center; /* Centrar horizontalmente el contenido */
-    align-items: center; /* Centrar verticalmente el contenido */
+    width: 349px;
+    height: 81px;
+    font-family: "Barlow", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   span {
