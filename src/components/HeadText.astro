@@ -1,4 +1,5 @@
 ---
+import "../styles/HeadText.css";
 interface Props {
   firstLine: string;
   secondLine?: string;
@@ -10,14 +11,14 @@ const { firstLine, secondLine, img } = Astro.props;
 
 {img ? (
   <div class="container">
-    <!-- Componente con imagen de fondo -->
+    <!-- Image tag -->
     <img class="background-image" src={img} alt="Imagen de fondo" />
 
-    <!-- Texto sobrepuesto -->
+    <!-- Text overlay -->
     <div class="text-overlay">
       <h2>
         <span class="smallTitle">{secondLine}</span><br />
-        <span class="titulo2">{firstLine}</span>
+        <span class="bigTitle">{firstLine}</span>
       </h2>
     </div>
   </div>
@@ -27,75 +28,3 @@ const { firstLine, secondLine, img } = Astro.props;
     <h1>{firstLine}</h1>
   </div>
 )}
-
-<style>
-  /* Estilos para el primer componente */
-  .container {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 20px;
-  }
-
-  .background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(70%);
-    border-radius: 20px;
-  }
-
-  .text-overlay {
-    position: absolute;
-    bottom: 0px; /* Cambiado a 20px para que esté 20px por encima del borde inferior */
-    left: 0;
-    color: #000;
-    background-color: white;
-    padding: 20px;
-    width: 269px;
-    border-radius: 20px 0 0 20px;
-}
-
-
-  .text-overlay h2 {
-    font-size: 30px;
-    color: #000000;
-    font-family: "Barlow", sans-serif;
-    font-weight: normal; /* Estilo normal, sin negritas */
-}
-
-  .text-overlay .titulo2 {
-    font-size: 46px;
-    color: #e30613;
-    font-family: "Barlow", sans-serif;
-    font-weight: bold;
-}
-
-  .text-overlay p {
-    margin: 20px 0 0;
-    font-size: 24px;
-    line-height: 1.2;
-  }
-
-  /* Estilos para el segundo componente */
-  .container-no-img {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .container-no-img h2 {
-    font-size: 30px;
-    color: #000000;
-    line-height: 30.77px;
-    font-family: "Barlow", sans-serif;
-  }
-
-  .container-no-img h1 {
-    font-size: 30px;
-    color: #e30613;
-    line-height: 47.18px;
-    font-family: "Barlow", sans-serif;
-    font-weight: bold;
-  }
-</style>
