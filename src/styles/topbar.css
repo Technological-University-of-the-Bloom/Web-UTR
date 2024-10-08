@@ -3,17 +3,14 @@
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  padding: 40px 20px;
-  border-bottom: 2px solid #e0e0e0;
+  padding: 15px 30px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  position: static; /* Changed to static */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: 10; /* Ensure it's above other elements */
-}
-
-.icon {
-  height: 40px; /* Logo height */
+  z-index: 100;
 }
 
 .topbar div {
@@ -22,30 +19,19 @@
   align-items: center;
 }
 
-.flag-container {
-  position: absolute;
-  left: 10px;
-  width: 20px;
-  height: 20px;
-  background-image: url("https://em-content.zobj.net/source/twitter/53/flag-for-mexico_1f1f2-1f1fd.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.flag-container img {
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+  box-sizing: border-box;
+  width: 9vw;
 }
 
-.center-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.center-logo img {
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+  min-width: 69px;
 }
 
 .dropdown-container {
-  position: absolute;
-  right: 10px;
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+  width: 9vw;
   cursor: pointer;
-}
-
-/* Adjust margin for content */
-.content {
-  margin-top: 80px; /* Adjusted margin for topbar height */
 }
