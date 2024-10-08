@@ -12,15 +12,19 @@ body {
   font-size: 16px;
   line-height: 1;
   color: #000000;
-  background-color: #ffffff;
 }
 
 /*colores*/
 :root {
   --primary-red: #e12030;
+  --secondary-red: #be1a2f;
   --white: #ffffff;
+  --off-white: #e6e6e6;
   --black: #000000;
-  --secondary-blue: #07065d;
+  --off-black: #1a1a1a;
+  --primary-blue: #4269e1;
+  --secondary-blue: #0d49b3;
+  --terciary-blue: #07065d;
 }
 
 /*letra*/
