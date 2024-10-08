@@ -1,5 +1,6 @@
 ---
-import Home from "../layouts/Mobile/Home.astro";
+import HomeMobile from "../layouts/Mobile/Home.astro";
+import HomeDesktop from "../layouts/Desktop/Home.astro";
 import "../styles/global.css";
 
 import Carousel from "../components/Carousel.astro";
@@ -13,65 +14,72 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 ---
+
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.webmanifest" />
-<Home title="Home | UTR">
-  <main>
-    <div class="b-100"/>
-    <HeadText
-      firstLine="TO GROW"
-      secondLine="YOU’VE FOUND THE PLACE THAT ALLOWS YOU"
-      img="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/students_utr.jpg"
-    />
-    <div style="display: flex; flex-direction: column; gap:16px">
+<div class="mobile">
+  <HomeMobile title="Home | UTR">
+    <main>
+      <div class="b-100"></div>
+      <HeadText
+        firstLine="TO GROW"
+        secondLine="YOU’VE FOUND THE PLACE THAT ALLOWS YOU"
+        img="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/students_utr.jpg"
+      />
+      <div style="display: flex; flex-direction: column; gap:16px">
+        <ParagraphBody
+          textColor="black"
+          content="Universidad Tecnológica El Retoño is a new alternative for higher education. At UTR, we believe in your potential to transform, innovate, and thrive."
+        />
+        <ParagraphBody
+          textColor="black"
+          content="Our commitment to education empowers you to break boundaries, discover your passions, and create a future full of possibilities. Together, we grow, learn, and shape tomorrow."
+        />
+      </div>
+      <Carousel />
+      <Video />
       <ParagraphBody
         textColor="black"
-        content="Universidad Tecnológica El Retoño is a new alternative for higher education. At UTR, we believe in your potential to transform, innovate, and thrive."
+        content="We empower students and businesses with immersive technologies to lead in Industry 4.0. Our state-of-the-art space provides virtual reality experiences, simulations, and cutting-edge tools like CAD, AI, and game development, preparing you to innovate boldly and succeed in the future."
       />
-      <ParagraphBody
-        textColor="black"
-        content="Our commitment to education empowers you to break boundaries, discover your passions, and create a future full of possibilities. Together, we grow, learn, and shape tomorrow."
+
+      <div class="borderblack">
+        <Button
+          label="EXPLORE OUR PROGRAMS"
+          borderColor="black"
+          style="font-size: 50px;"
+        />
+      </div>
+
+      <UnivesityData />
+      <HeadText
+        firstLine="PROUD PARTNERS"
+        secondLine="OUR"
+        img="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
       />
-    </div>
-    <Carousel />
-    <Video />
-    <ParagraphBody
-      textColor="black"
-      content="We empower students and businesses with immersive technologies to lead in Industry 4.0. Our state-of-the-art space provides virtual reality experiences, simulations, and cutting-edge tools like CAD, AI, and game development, preparing you to innovate boldly and succeed in the future."
-    />
-
-    <div class="borderblack">
-      <Button
-        label="EXPLORE OUR PROGRAMS"
-        borderColor="black"
-        style="font-size: 50px;"
+      <Carousel />
+      <HeadText
+        firstLine="NEWS"
+        img="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
       />
-    </div>
+      <News />
 
-    <UnivesityData />
-    <HeadText
-      firstLine="PROUD PARTNERS"
-      secondLine="OUR"
-      img="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
-    />
-    <Carousel />
-    <HeadText
-      firstLine="NEWS"
-      img="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
-    />
-    <News />
-
-    <div class="background">
       <div class="button-container">
         <div class="step">
-          <h3 class="text" style="color: #000000; margin: 30px 0 0 0;">
+          <p
+            class="pre-button-text"
+            style="color: #000000; margin: 30px 0 0 0;"
+          >
             TAKE THE
-          </h3>
-          <h3 class="text" style="color: #ffffff; margin: 0 0 50px 0;">
+          </p>
+          <p
+            class="pre-button-text"
+            style="color: #ffffff; margin: 0 0 50px 0;"
+          >
             NEXT STEP
-          </h3>
+          </p>
         </div>
         <div class="buttons">
           <Button label="REQUEST INFO" />
@@ -79,41 +87,55 @@ config.autoAddCss = false;
           <Button label="APPLY NOW" />
         </div>
       </div>
-    </div>
 
-    <!-- Nueva sección con contenedor personalizado -->
-    <div class="container">
-      <!-- Footer del contenido -->
-      <!-- Título principal -->
-      <p class="paragraph" style="padding: 20px 0 30px 0;">
-        Notice of Nondiscriminatory Policy
-      </p>
-      <!-- Contenido del aviso -->
-      <p class="paragraph">
-        Universidad Tecnológica El Retoño admits students of any race, color,
-        national and ethnic origin to all the rights, privileges, programs, and
-        activities generally accorded or made available to students at the
-        school. It does not discriminate on the basis of race, color, national
-        and ethnic origin in administration of its educational policies,
-        admissions policies, scholarship and loan programs, and athletic and
-        other school-administered programs.
-      </p>
-      <p class="information">Universidad Tecnológica El Retoño</p>
-      <p class="information">
-        Carretera a San Luis Potosí km. 68 Comunidad El Retoño 20337, El Retoño,
-        Aguascalientes.
-      </p>
-      <p class="information">449 7860 984</p>
-      <p class="information">contacto@utr.edu.mx</p>
-      <p
-        class="information"
-        style="color: #808080; font-size:18px; padding: 30px 0 0px 0"
+      <!-- Nueva sección con contenedor personalizado -->
+      <div class="container">
+        <!-- Footer del contenido -->
+        <!-- Título principal -->
+        <p class="paragraph" style="padding: 20px 0 30px 0;">
+          Notice of Nondiscriminatory Policy
+        </p>
+        <!-- Contenido del aviso -->
+        <p class="paragraph">
+          Universidad Tecnológica El Retoño admits students of any race, color,
+          national and ethnic origin to all the rights, privileges, programs,
+          and activities generally accorded or made available to students at the
+          school. It does not discriminate on the basis of race, color, national
+          and ethnic origin in administration of its educational policies,
+          admissions policies, scholarship and loan programs, and athletic and
+          other school-administered programs.
+        </p>
+        <p class="information">Universidad Tecnológica El Retoño</p>
+        <p class="information">
+          Carretera a San Luis Potosí km. 68 Comunidad El Retoño 20337, El
+          Retoño, Aguascalientes.
+        </p>
+        <p class="information">449 7860 984</p>
+        <p class="information">contacto@utr.edu.mx</p>
+        <p
+          class="information"
+          style="color: #808080; font-size:18px; padding: 30px 0 0px 0"
+        >
+          Universidad Tecnológica El Retoño ©2024
+        </p>
+      </div>
+    </main>
+  </HomeMobile>
+</div>
+
+<div class="desktop">
+  <HomeDesktop title="Home | UTR">
+    <main>
+      <div
+        style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;"
       >
-        Universidad Tecnológica El Retoño ©2024
-      </p>
-    </div>
-  </main>
-</Home>
+        <p style="font-family: 'Barlow', sans-serif; font-weight: 700;">
+          Under construction
+        </p>
+      </div>
+    </main>
+  </HomeDesktop>
+</div>
 
 <style>
   main {
@@ -122,6 +144,24 @@ config.autoAddCss = false;
     gap: 50px; /* Espaciado de 50px entre componentes */
     color: #ffffff; /* Texto blanco por defecto para el main */
   }
+
+  .pre-button-text {
+    font-family: "Barlow", sans-serif;
+    font-size: 3.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #e12030;
+    padding: 20px;
+    color: #e6e6e6;
+    width: 100%; /* Adjust width */
+    height: 64vh;
+  }
+
   .buttons {
     display: flex;
     flex-direction: column;
@@ -135,7 +175,7 @@ config.autoAddCss = false;
     align-items: center; /* Centra el contenido horizontalmente */
   }
   .container {
-    width: 393px;
+    width: 100%;
     height: 956px;
     margin: 0 auto; /* Centrar el contenedor horizontalmente */
     background-color: #000000; /* Fondo negro */

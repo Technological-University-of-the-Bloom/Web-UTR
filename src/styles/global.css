@@ -1,20 +1,26 @@
-/* para móvil y para escritorio, paddings, fuentes, tamaños de letra, clases de <div>, colores establecidos, colores de fondo */
+.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html,
-body {
   font-family: "Futura", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1;
-  color: #000000;
 }
 
-/*colores*/
+/*Colours*/
 :root {
   --primary-red: #e12030;
   --secondary-red: #be1a2f;
@@ -27,31 +33,6 @@ body {
   --terciary-blue: #07065d;
 }
 
-/*letra*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Futura", sans-serif;
-  font-weight: bold;
-}
-
-.title {
-  font-size: 2.5rem;
-}
-.subtitle {
-  font-size: 2rem;
-}
-
-.text {
-  font-family: "Barlow", sans-serif; /* Aplicamos la fuente Barlow */
-  font-size: 3.5rem; /* Tamaño del texto */
-  margin: 0; /* Elimina el margen alrededor del texto */
-  padding: 0; /* Elimina cualquier padding adicional */
-}
-
 @font-face {
   font-family: "Futura";
   src: url("/futura/Futura\ Book\ font.ttf") format("truetype");
@@ -59,169 +40,8 @@ h6 {
   font-style: normal;
 }
 
-.paragraph {
-  font-family: "Futura Book", sans-serif;
-  font-size: 20px;
-  color: #e6e6e6; /* Light gray text color */
-  padding: 0px 0 30px 0; /* Padding: top 0px, right 0px, bottom 30px, left 0px */
-  font-weight: normal; /* Ensure the text is not bold */
-  line-height: 20px; /* Line height set to 20px for consistent spacing between lines */
-}
+/*Separators*/
 
-.information {
-  font-family: "Futura", sans-serif;
-  font-size: 20px;
-  color: #e6e6e6;
-  padding: 0 0 0px 0;
-  font-weight: normal; /* This prevents bold text */
-  line-height: 20px; /* Set the line height */
-}
-h6 {
-  font-size: 1rem;
-}
-
-p {
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
-/*<div>*/
-.div-padding-small {
-  padding: 10px;
-}
-
-.div-padding-medium {
-  padding: 20px;
-}
-
-.div-padding-large {
-  padding: 40px;
-}
-
-/*padding*/
-.padding-small {
-  padding: 8px;
-}
-
-.padding-medium {
-  padding: 16px;
-}
-
-.padding-large {
-  padding: 24px;
-}
-
-/*movil*/
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.75rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
-  h4 {
-    font-size: 1.25rem;
-  }
-  h5 {
-    font-size: 1rem;
-  }
-  h6 {
-    font-size: 0.875rem;
-  }
-
-  .div-padding-medium {
-    padding: 15px;
-  }
-
-  .div-padding-large {
-    padding: 30px;
-  }
-}
-
-/*escritorio*/
-@media (min-width: 769px) {
-  html {
-    font-size: 16px;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-}
-
-/*utilititis*/
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: block;
-}
-.background {
-  display: flex;
-  flex-direction: column;
-  background-color: #e12030;
-  padding: 20px;
-  color: #e6e6e6;
-  width: 393px; /* Adjust width */
-  height: 540px; /* Adjust height */
-}
-
-/*Global font Futura*/
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span,
-div {
-  font-family: "Futura", sans-serif;
-}
-
-/*red background*/
-.bg-red {
-  background-color: #e12030;
-  color: white;
-}
-
-/*black background*/
-.bg-black {
-  background-color: #000000;
-  color: white;
-}
-
-/*white background*/
-.bg-white {
-  background-color: #ffffff;
-  color: #000000;
-}
-.borderblack {
-  display: flex;
-  justify-content: center; /* Centrar el contenido horizontalmente */
-  margin: 20px 0; /* Espaciado vertical alrededor del contenedor */
+.b-100 {
+  height: 1vh;
 }
