@@ -216,12 +216,8 @@ div {
   background-color: #ffffff;
   color: #000000;
 }
-
-.borderblack button {
-  border: 2px solid black;
-  color: rgb(0, 0, 0);
+.borderblack {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 0 15px 0 15px;
+  justify-content: center; /* Centrar el contenido horizontalmente */
+  margin: 20px 0; /* Espaciado vertical alrededor del contenedor */
 }
