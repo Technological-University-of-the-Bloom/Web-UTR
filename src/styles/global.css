@@ -17,10 +17,10 @@ body {
 
 /*colores*/
 :root {
-  --primary-color: #e12030;
-  --secondary-color: #ffffff;
-  --text-color: #000000;
-  --background-color: #ffffff;
+  --primary-red: #e12030;
+  --white: #ffffff;
+  --black: #000000;
+  --secondary-blue: #07065d;
 }
 
 /*letra*/
