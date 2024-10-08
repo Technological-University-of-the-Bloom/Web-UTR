@@ -48,24 +48,29 @@ const { firstLine, secondLine, img } = Astro.props;
 
   .text-overlay {
     position: absolute;
-    bottom: 0;
+    bottom: 0px; /* Cambiado a 20px para que esté 20px por encima del borde inferior */
     left: 0;
     color: #000;
     background-color: white;
     padding: 20px;
-    max-width: 269px;
+    width: 269px;
     border-radius: 20px 0 0 20px;
-  }
+}
+
 
   .text-overlay h2 {
-    font-size: 36px;
-    margin: 0;
-    line-height: 1.2;
-  }
+    font-size: 30px;
+    color: #000000;
+    font-family: "Barlow", sans-serif;
+    font-weight: normal; /* Estilo normal, sin negritas */
+}
 
   .text-overlay .titulo2 {
+    font-size: 46px;
     color: #e30613;
-  }
+    font-family: "Barlow", sans-serif;
+    font-weight: bold;
+}
 
   .text-overlay p {
     margin: 20px 0 0;
@@ -91,5 +96,6 @@ const { firstLine, secondLine, img } = Astro.props;
     color: #e30613;
     line-height: 47.18px;
     font-family: "Barlow", sans-serif;
+    font-weight: bold;
   }
 </style>
