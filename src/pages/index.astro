@@ -92,11 +92,11 @@ config.autoAddCss = false;
       <div class="container">
         <!-- Footer del contenido -->
         <!-- Título principal -->
-        <p class="paragraph" style="padding: 20px 0 30px 0;">
+        <p class="bottom-legals">
           Notice of Nondiscriminatory Policy
         </p>
         <!-- Contenido del aviso -->
-        <p class="paragraph">
+        <p class="bottom-legals">
           Universidad Tecnológica El Retoño admits students of any race, color,
           national and ethnic origin to all the rights, privileges, programs,
           and activities generally accorded or made available to students at the
@@ -105,15 +105,14 @@ config.autoAddCss = false;
           admissions policies, scholarship and loan programs, and athletic and
           other school-administered programs.
         </p>
-        <p class="information">Universidad Tecnológica El Retoño</p>
-        <p class="information">
+        <p class="bottom-legals">Universidad Tecnológica El Retoño</p>
+        <p class="bottom-legals">
           Carretera a San Luis Potosí km. 68 Comunidad El Retoño 20337, El
           Retoño, Aguascalientes.
         </p>
-        <p class="information">449 7860 984</p>
-        <p class="information">contacto@utr.edu.mx</p>
+        <p class="bottom-legals">449 7860 984</p>
+        <p class="bottom-legals">contacto@utr.edu.mx</p>
         <p
-          class="information"
           style="color: #808080; font-size:18px; padding: 30px 0 0px 0"
         >
           Universidad Tecnológica El Retoño ©2024
@@ -142,7 +141,10 @@ config.autoAddCss = false;
     display: flex;
     flex-direction: column;
     gap: 50px; /* Espaciado de 50px entre componentes */
-    color: #ffffff; /* Texto blanco por defecto para el main */
+  }
+
+  .bottom-legals {
+    color: var(--off-white);
   }
 
   .pre-button-text {
