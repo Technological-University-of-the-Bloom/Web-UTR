@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.dropdown-link-container {
+  width: 200px; /* Ajusta según el ancho que desees */
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.dropdown-parent {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.dropdown-parent:last-child {
+  border-bottom: none; /* Sin borde en el último elemento */
+}
+
+.dropdown-child {
+  font-size: 18px;
+  margin-left: 10px;
+  display: none; /* Oculto por defecto */
+}
+
+.close-icon {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+}

@@ -1,0 +1,57 @@
+---
+import "../styles/MenuOverlay.css";
+
+const handleDropdownClick = (event: { currentTarget: any }) => {
+  const dropdowns = document.querySelectorAll(".dropdown-child");
+  const clickedParent = event.currentTarget;
+
+  dropdowns.forEach((dropdown) => {
+    if (dropdown instanceof HTMLElement) {
+      dropdown.style.display = "none";
+    }
+  });
+
+  const children =
+    clickedParent.nextElementSibling?.querySelectorAll(".dropdown-child");
+  children?.forEach((child: { style: { display: string } }) => {
+    if (child instanceof HTMLElement) {
+      child.style.display = "block";
+    }
+  });
+};
+
+setTimeout(() => {
+  const dropdownParents = document.querySelectorAll(".dropdown-parent");
+  dropdownParents.forEach((parent) => {
+    parent.addEventListener("click", handleDropdownClick);
+  });
+}, 0);
+---
+
+<div class="dropdown-link-container">
+  <div><h1 class="dropdown-parent">Home</h1></div>
+
+  <div>
+    <h1 class="dropdown-parent">About Us</h1>
+    <p class="dropdown-child">Educational model</p>
+    <p class="dropdown-child">Facilities</p>
+    <p class="dropdown-child">Legal</p>
+    <p class="dropdown-child">People operations</p>
+  </div>
+
+  <div>
+    <h1 class="dropdown-parent">Academic</h1>
+    <p class="dropdown-child">Extracurriculars</p>
+    <p class="dropdown-child">Student services</p>
+    <p class="dropdown-child">Scholarships</p>
+    <p class="dropdown-child">Internships</p>
+  </div>
+
+  <div><h1 class="dropdown-parent">Mobility</h1></div>
+  <div><h1 class="dropdown-parent">Service</h1></div>
+  <div><h1 class="dropdown-parent">Communication</h1></div>
+
+  <div>
+    <h1 class="dropdown-parent">B-100</h1>
+  </div>
+</div>
