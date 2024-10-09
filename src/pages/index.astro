@@ -6,13 +6,11 @@ import "../styles/global.css";
 import Carousel from "../components/Carousel.astro";
 import HeadText from "../components/HeadText.astro";
 import Video from "../components/Video.astro";
-import ParagraphBody from "../components/ParagraphBody.astro";
 import UnivesityData from "../components/UnivesityData.astro";
-import News from "../components/News.astro";
+import News from "../components/HomeNewsSection.astro";
 import Button from "../components/Button.astro";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import BottomLegals from "../components/BottomLegals.astro";
 config.autoAddCss = false;
 ---
 
@@ -29,31 +27,26 @@ config.autoAddCss = false;
         secondLine="YOU’VE FOUND THE PLACE THAT ALLOWS YOU"
         img="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/students_utr.jpg"
       />
-      <div style="display: flex; flex-direction: column; gap:16px">
-        <ParagraphBody
-          textColor="black"
-          content="Universidad Tecnológica El Retoño is a new alternative for higher education. At UTR, we believe in your potential to transform, innovate, and thrive."
-        />
-        <ParagraphBody
-          textColor="black"
-          content="Our commitment to education empowers you to break boundaries, discover your passions, and create a future full of possibilities. Together, we grow, learn, and shape tomorrow."
-        />
-      </div>
+      <p class="paragraph">
+        Universidad Tecnológica El Retoño is a new alternative for higher
+        education. At UTR, we believe in your potential to transform, innovate,
+        and thrive.<br /><br />Our commitment to education empowers you to break
+        boundaries, discover your passions, and create a future full of
+        possibilities. Together, we grow, learn, and shape tomorrow.
+      </p>
       <Carousel />
       <Video />
-      <ParagraphBody
-        textColor="black"
-        content="We empower students and businesses with immersive technologies to lead in Industry 4.0. Our state-of-the-art space provides virtual reality experiences, simulations, and cutting-edge tools like CAD, AI, and game development, preparing you to innovate boldly and succeed in the future."
+      <p class="paragraph">
+        We empower students and businesses with immersive technologies to lead
+        in Industry 4.0. Our state-of-the-art space provides virtual reality
+        experiences, simulations, and cutting-edge tools like CAD, AI, and game
+        development, preparing you to innovate boldly and succeed in the future.
+      </p>
+      <Button
+        label="EXPLORE OUR PROGRAMS"
+        borderColor="black"
+        style="font-size: 50px;"
       />
-
-      <div class="borderblack">
-        <Button
-          label="EXPLORE OUR PROGRAMS"
-          borderColor="black"
-          style="font-size: 50px;"
-        />
-      </div>
-
       <UnivesityData />
       <HeadText
         firstLine="PROUD PARTNERS"
@@ -88,7 +81,6 @@ config.autoAddCss = false;
           <Button label="APPLY NOW" />
         </div>
       </div>
-      <BottomLegals />
     </main>
   </HomeMobile>
 </div>

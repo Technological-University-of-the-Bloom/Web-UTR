@@ -41,7 +41,15 @@
   font-style: normal;
 }
 
-/*Separators*/
+/* General text styles */
+
+.paragraph {
+  padding: 0 2.7vh;
+  font-size: 15pt;
+  line-height: 1;
+}
+
+/* Separators */
 
 .b-100 {
   height: 1vh;

@@ -1,4 +1,5 @@
 ---
+import BottomLegals from "../../components/BottomLegals.astro";
 import Topbar from "../../components/Topbar.astro";
 
 interface Props {
@@ -17,13 +18,20 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
 
   <body>
     <Topbar />
     <slot />
+    <BottomLegals />
   </body>
 </html>
