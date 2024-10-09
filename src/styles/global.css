@@ -114,6 +114,8 @@ button:hover {
 }
 
 .legal-img-cont {
+  justify-content: center;
+  align-items: center;
   height: 21vh;
   padding: 30px 20px;
 }
