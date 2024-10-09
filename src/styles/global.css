@@ -114,13 +114,8 @@ button:hover {
 }
 
 .legal-img-cont {
-  width: 100vw;
   height: 21vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   padding: 30px 20px;
-  overflow: hidden;
 }
 
 .legal-img-cont img {
