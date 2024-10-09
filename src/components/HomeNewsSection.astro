@@ -1,64 +1,54 @@
 ---
-const { date, mainContent, title, link } = Astro.props;
-//const { data } = Astro.props;
+import "../styles/HomeNewsSection.css";
+interface NewsItem {
+  date: string;
+  mainContent: string;
+  title: string;
+  link: string;
+}
+
+interface Props {
+  news: NewsItem[];
+}
+const { news }: Props = Astro.props;
 
 const defaultNews = [
-  { date: "2024-10-01", title: "Noticia 1", mainContent: "Contenido de la noticia 1" },
-  { date: "2024-10-02", title: "Noticia 2", mainContent: "Contenido de la noticia 2" },
-  { date: "2024-10-03", title: "Noticia 3", mainContent: "Contenido de la noticia 3" }
+  {
+    date: "9 September, 2024",
+    title:
+      "UTR launches CIC 4.0 in favour of innovation, a facility to lead technological development in the country",
+    mainContent: "Contenido de la noticia 1",
+    link: "utr.edu.mx/news",
+  },
+  {
+    date: "10 September, 2024",
+    title: "Dean Gilberto Morrillón tells about the future of the UTR",
+    mainContent: "Contenido de la noticia 2",
+    link: "utr.edu.mx/news",
+  },
+  {
+    date: "11 September, 2024",
+    title:
+      "US consulate gives visit to the UTR; new opportunities for students to go abroad",
+    mainContent: "Contenido de la noticia 3",
+    link: "utr.edu.mx/news",
+  },
 ];
+
+const newsToDisplay = news && news.length > 0 ? news : defaultNews;
 ---
 
-<html lang="es">
-  <head>
-    <style>
-      @font-face {
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      body {
-        font-family: 'Futura Book', Arial, sans-serif;
-        font-size: 20px;
-      }
-
-      .container {
-        border-top: 1px solid #000;
-        width: 300px;
-        padding: 10px;
-      }
-
-      .date {
-        font-size: 12px;
-        color: #333;
-      }
-
-      .title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 5px;
-        color: #000;
-      }
-
-      .main-content {
-        font-size: 16px;
-        font-weight: bold;
-        margin-top: 5px;
-        line-height: 1.5;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="date">
-        {date}
-      </div>
-      <div class="title">
-        {title}
-      </div>
-      <div class="main-content">
-        {mainContent}
-      </div>
-    </div>
-  </body>
-</html>
+<div class="container">
+  {
+    newsToDisplay.map((item) => (
+      <a href={item.link || "#"}>
+        <div>
+          <div class="line" />
+          <div class="date">{item.date}</div>
+          <div class="title">{item.title}</div>
+        </div>
+      </a>
+    ))
+  }
+</div>
+<a class="pilon" href="utr.edu.mx/news">SEE ALL NEWS</a>
