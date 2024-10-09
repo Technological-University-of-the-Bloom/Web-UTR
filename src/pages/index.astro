@@ -3,7 +3,7 @@ import HomeMobile from "../layouts/Mobile/Home.astro";
 import HomeDesktop from "../layouts/Desktop/Home.astro";
 import "../styles/global.css";
 
-import Carousel from "../components/Carousel.astro";
+import Slider from "../components/Slider.astro";
 import HeadText from "../components/HeadText.astro";
 import Video from "../components/Video.astro";
 import UnivesityStats from "../components/UnivesityStats.astro";
@@ -49,7 +49,15 @@ try {
         boundaries, discover your passions, and create a future full of
         possibilities. Together, we grow, learn, and shape tomorrow.
       </p>
-      <!-- <Carousel /> -->
+      <Slider
+        images={[
+          "src/img/jpg/home1.jpg",
+          "src/img/jpg/home2.jpg",
+          "src/img/jpg/home3.jpg",
+          "src/img/jpg/home4.jpg",
+        ]}
+        id="slider-0"
+      />
       <Video />
       <p class="paragraph">
         We empower students and businesses with immersive technologies to lead
@@ -68,9 +76,20 @@ try {
         secondLine="OUR"
         img="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
-      <!-- <Carousel /> -->
+      <Slider
+        images={[
+          "https://upload.wikimedia.org/wikipedia/commons/2/23/Nissan_2020_logo.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/9/9d/Capgemini_201x_logo.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/c/c6/Jatco_logo.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/1/1e/Marelli_logo.svg",
+          "https://www.linktrade.mx/wp-content/uploads/2022/12/cliente5-2.png",
+          "src/img/svg/cliente6.svg",
+        ]}
+        id="slider-1"
+      />
       <HeadText
         firstLine="NEWS"
+        secondLine="LATEST"
         img="https://images.pexels.com/photos/1493226/pexels-photo-1493226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
       <HomeNewsSection news={news} />
@@ -87,6 +106,11 @@ try {
           <Button label="VISIT" color="white" />
           <Button label="APPLY NOW" color="white" />
         </div>
+      </div>
+
+      <div class="legal-img-cont">
+        <a href=""><img src="src/img/jpg/bot_home_1.jpeg" /></a>
+        <a href=""><img src="src/img/jpg/bot_home_2.jpeg" /></a>
       </div>
     </main>
   </HomeMobile>

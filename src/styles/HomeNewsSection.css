@@ -2,7 +2,7 @@ a {
   text-decoration: none;
 }
 
-.container {
+.news-container {
   display: flex;
   flex-direction: column;
   gap: 20px;

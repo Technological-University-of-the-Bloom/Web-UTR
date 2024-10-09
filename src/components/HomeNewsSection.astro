@@ -38,7 +38,7 @@ const defaultNews = [
 const newsToDisplay = news && news.length > 0 ? news : defaultNews;
 ---
 
-<div class="container">
+<div class="news-container">
   {
     newsToDisplay.map((item) => (
       <a href={item.link || "#"}>

@@ -112,3 +112,20 @@ button:hover {
   gap: 20px;
   /* Espaciado de 50px entre los elementos dentro del contenedor */
 }
+
+.legal-img-cont {
+  width: 100vw;
+  height: 21vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 30px 20px;
+  overflow: hidden;
+}
+
+.legal-img-cont img {
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
