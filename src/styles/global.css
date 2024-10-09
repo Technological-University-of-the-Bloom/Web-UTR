@@ -41,6 +41,50 @@
   font-style: normal;
 }
 
+/* Buttons Styles */
+
+button {
+  background-color: transparent;
+  border: 2.5pt solid;
+  padding: 30pt 20pt;
+  cursor: pointer;
+  border-radius: 0 0 0 20px;
+  transition: background-color 0.3s ease;
+  width: 349px;
+  height: 81px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background-color: white;
+  color: #e12030;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2.37vh;
+  align-items: center;
+}
+
+.button-text {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-size: 23pt;
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.37vh;
+  align-items: center;
+}
+
 /* General text styles */
 
 .paragraph {

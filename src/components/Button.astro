@@ -1,48 +1,10 @@
 ---
-const { label, borderColor } = Astro.props; // El prop 'label' pasará el texto de cada botón
+const { label, color } = Astro.props;
 ---
 
-<style>
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-
-  button {
-    background-color: transparent;
-    border: 2px solid;
-    color: rgb(255, 255, 255);
-    padding: 0.75rem;
-    cursor: pointer;
-    border-radius: 0 0 0 20px;
-    transition: background-color 0.3s ease;
-    width: 349px;
-    height: 81px;
-    font-family: "Barlow", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  span {
-    font-family: "Barlow", sans-serif; /* Aplicamos la fuente Barlow */
-    font-size: 2.1rem; /* Ajusta el tamaño de la fuente aquí */
-    width: auto; /* El ancho se ajustará al contenido */
-    height: auto; /* La altura se ajustará al contenido */
-    text-align: center; /* Centrar el texto */
-  }
-
-  button:hover {
-    background-color: white; /* Cambia a blanco al pasar el mouse */
-    color: #e12030; /* Texto rojo al hacer hover */
-  }
-</style>
-
 <div class="buttons">
-  <button style={`border-color: ${borderColor}; color: ${borderColor};`}>
-    <span>{label}</span>
+  <button style={`border-color: ${color}; color: ${color};`}>
+    <span class="button-text">{label}</span>
   </button>
   <!-- Puedes agregar más botones aquí como desees -->
 </div>

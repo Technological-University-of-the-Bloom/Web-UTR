@@ -34,7 +34,7 @@ config.autoAddCss = false;
         boundaries, discover your passions, and create a future full of
         possibilities. Together, we grow, learn, and shape tomorrow.
       </p>
-      <Carousel />
+      <!-- <Carousel /> -->
       <Video />
       <p class="paragraph">
         We empower students and businesses with immersive technologies to lead
@@ -43,7 +43,7 @@ config.autoAddCss = false;
         development, preparing you to innovate boldly and succeed in the future.
       </p>
       <Button
-        label="EXPLORE OUR PROGRAMS"
+        label="EXPLORE OUR PROGRAMMES"
         borderColor="black"
         style="font-size: 50px;"
       />
@@ -53,7 +53,7 @@ config.autoAddCss = false;
         secondLine="OUR"
         img="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
       />
-      <Carousel />
+      <!-- <Carousel /> -->
       <HeadText
         firstLine="NEWS"
         img="https://www.svgrepo.com/show/508699/landscape-placeholder.svg"
@@ -61,24 +61,16 @@ config.autoAddCss = false;
       <News />
 
       <div class="button-container">
-        <div class="step">
-          <p
-            class="pre-button-text"
-            style="color: #000000; margin: 30px 0 0 0;"
-          >
+        <div>
+          <p class="pre-button-text" style="color: var(--off-black);">
             TAKE THE
           </p>
-          <p
-            class="pre-button-text"
-            style="color: #ffffff; margin: 0 0 50px 0;"
-          >
-            NEXT STEP
-          </p>
+          <p class="pre-button-text">NEXT STEP<br /><br /></p>
         </div>
-        <div class="buttons">
-          <Button label="REQUEST INFO" />
-          <Button label="VISIT" />
-          <Button label="APPLY NOW" />
+        <div class="button-list">
+          <Button label="REQUEST INFO" color="white" />
+          <Button label="VISIT" color="white" />
+          <Button label="APPLY NOW" color="white" />
         </div>
       </div>
     </main>
@@ -108,7 +100,8 @@ config.autoAddCss = false;
 
   .pre-button-text {
     font-family: "Barlow", sans-serif;
-    font-size: 3.5rem;
+    font-weight: 900;
+    font-size: 35pt;
     margin: 0;
     padding: 0;
   }
@@ -117,10 +110,8 @@ config.autoAddCss = false;
     display: flex;
     flex-direction: column;
     background-color: #e12030;
-    padding: 20px;
+    padding: 8.3vh 5.1vw;
     color: #e6e6e6;
-    width: 100%; /* Adjust width */
-    height: 64vh;
   }
 
   .buttons {
