@@ -1,42 +1,36 @@
-/* Fondo blanco, agregar las imágenes, nada con sombras, que sea estática */
-/* https://em-content.zobj.net/source/twitter/53/flag-for-mexico_1f1f2-1f1fd.png */
 .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    border-bottom: 2px solid #e0e0e0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
 
 .topbar div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Left, center, and right logos */
-.logo-left, .logo-center, .logo-right img {
-    height: 100%; 
-    max-height: 100%; 
+.flag-container img {
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+  width: 9vw;
 }
 
-.flag-container {
-    position: absolute;
-    left: 10px;
-}
-
-.center-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.center-logo img {
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+  width: 17.7vw;
 }
 
 .dropdown-container {
-    position: absolute;
-    right: 10px;
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+  width: 9vw;
+  cursor: pointer;
 }

@@ -1,0 +1,24 @@
+---
+import "../styles/UniversityStats.css";
+
+const stats = [
+  { number: "13", label: "Undergrad majors" },
+  { number: "800", label: "Current Students" },
+  { number: "983", label: "Graduates" },
+  { number: "13k+", label: "Students enrolled" },
+  { number: "5+", label: "Countries for study" },
+  { number: "#1", label: "Salary potential in Aguascalientes" },
+  { number: "#1", label: "Largest VR Centre in Latam" },
+];
+---
+
+<div class="stats-container">
+  {
+    stats.map((stat) => (
+      <div class="stat">
+        <span class="stat-number">{stat.number}</span>
+        <span class="stat-label">{stat.label}</span>
+      </div>
+    ))
+  }
+</div>

@@ -1,209 +1,131 @@
-/* para móvil y para escritorio, paddings, fuentes, tamaños de letra, clases de <div>, colores establecidos, colores de fondo */
+.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html,
-body {
   font-family: "Futura", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1;
-  color: #000000;
-  background-color: #ffffff;
 }
 
-/*colores*/
+/*Colours*/
 :root {
-  --primary-color: #e12030;
-  --secondary-color: #ffffff;
-  --text-color: #000000;
-  --background-color: #ffffff;
-}
-
-/*letra*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Futura", sans-serif;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.title {
-  font-size: 2.5rem;
-}
-.subtitle {
-  font-size: 2rem;
-}
-
-.text {
-  font-family: "Barlow", sans-serif; /* Aplicamos la fuente Barlow */
-  font-size: 3.5rem; /* Tamaño del texto */
-  margin: 0; /* Elimina el margen alrededor del texto */
-  padding: 0; /* Elimina cualquier padding adicional */
+  --primary-red: #e12030;
+  --secondary-red: #be1a2f;
+  --white: #ffffff;
+  --off-white: #e6e6e6;
+  --black: #000000;
+  --off-black: #1a1a1a;
+  --primary-blue: #4269e1;
+  --secondary-blue: #0d49b3;
+  --terciary-blue: #07065d;
 }
 
 @font-face {
   font-family: "Futura";
-  src: url("/public/futura/Futura\ Book\ font.ttf") format("truetype");
+  src: url("/futura/Futura\ Book\ font.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-h4 {
-  font-size: 1.5rem;
-}
-h5 {
-  font-size: 1.25rem;
-}
-h6 {
-  font-size: 1rem;
-}
+/* Buttons Styles */
 
-p {
-  font-size: 1rem;
-  margin-bottom: 16px;
-  color: var(--text-color);
-}
-
-/*<div>*/
-.div-padding-small {
-  padding: 10px;
+button {
+  background-color: transparent;
+  border: 2.5pt solid;
+  padding: 30pt 20pt;
+  cursor: pointer;
+  border-radius: 0 0 0 20px;
+  transition: background-color 0.3s ease;
+  width: 349px;
+  height: 81px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.div-padding-medium {
-  padding: 20px;
+button:hover {
+  background-color: white;
+  color: #e12030;
 }
 
-.div-padding-large {
-  padding: 40px;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2.37vh;
+  align-items: center;
 }
 
-/*padding*/
-.padding-small {
-  padding: 8px;
-}
-
-.padding-medium {
-  padding: 16px;
-}
-
-.padding-large {
-  padding: 24px;
-}
-
-/*movil*/
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.75rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
-  h4 {
-    font-size: 1.25rem;
-  }
-  h5 {
-    font-size: 1rem;
-  }
-  h6 {
-    font-size: 0.875rem;
-  }
-
-  .div-padding-medium {
-    padding: 15px;
-  }
-
-  .div-padding-large {
-    padding: 30px;
-  }
-}
-
-/*escritorio*/
-@media (min-width: 769px) {
-  html {
-    font-size: 16px;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-}
-
-/*utilititis*/
-.text-center {
+.button-text {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-size: 23pt;
+  width: auto;
+  height: auto;
   text-align: center;
 }
 
-.text-right {
-  text-align: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.hidden {
-  display: none;
-}
-
-.visible {
-  display: block;
-}
-.background {
+.button-list {
   display: flex;
   flex-direction: column;
-  background-color: #e12030;
-  padding: 20px;
-  color: #e6e6e6;
-  width: 393px; /* Adjust width */
-  height: 540px; /* Adjust height */
+  gap: 2.37vh;
+  align-items: center;
 }
 
-/*Global font Futura*/
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span,
-div {
-  font-family: "Futura", sans-serif;
+/* General text styles */
+
+.paragraph {
+  padding: 0 2.7vh;
+  font-size: 15pt;
+  line-height: 1;
 }
 
-/*red background*/
-.bg-red {
-  background-color: #e12030;
-  color: white;
+/* Separators */
+
+.b-100 {
+  height: 1vh;
 }
 
-/*black background*/
-.bg-black {
-  background-color: #000000;
-  color: white;
+/* Bottom legals text box*/
+
+.bottom-legals {
+  color: var(--off-white);
+  width: 100%;
+  background-color: var(--off-black);
+  /* Fondo negro */
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Espaciado de 50px entre los elementos dentro del contenedor */
 }
 
-/*white background*/
-.bg-white {
-  background-color: #ffffff;
-  color: #000000;
+.legal-img-cont {
+  width: 100vw;
+  height: 21vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 30px 20px;
+  overflow: hidden;
+}
+
+.legal-img-cont img {
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
 }

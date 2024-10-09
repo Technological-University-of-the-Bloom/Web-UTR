@@ -1,0 +1,44 @@
+a {
+  text-decoration: none;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.line {
+  border: 0;
+  background-color: #000;
+  height: .05rem;
+  width: 53vw;
+  margin-bottom: 4.8vh;
+}
+
+.date,
+.title {
+  margin-left: 20px;
+  font-family: Barlow, sans-serif;
+  color: var(--black);
+}
+
+.date {
+  font-size: 11pt;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 15pt;
+  font-weight: 600;
+  margin-top: 0px;
+}
+
+.pilon {
+  margin-left: 5.1vw;
+  font-family: Barlow, sans-serif;
+  font-weight: 600;
+  color: var(--primary-red);
+}

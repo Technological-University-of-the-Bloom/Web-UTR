@@ -1,5 +1,5 @@
 ---
-const placeholderSrc = "https://via.placeholder.com/420x236.png?text=Placeholder+Image"; // URL de la imagen de placeholder
+const placeholderSrc = "https://www.youtube.com/embed/25S-qGeKBWU"; // URL del video de YouTube
 ---
 
 <style>
@@ -13,11 +13,10 @@ const placeholderSrc = "https://via.placeholder.com/420x236.png?text=Placeholder
   .placeholder {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen al contenedor */
+    border: none; /* Quita el borde del iframe */
   }
 </style>
 
 <div class="placeholder-container">
-  <img src={placeholderSrc} alt="Placeholder Image" class="placeholder" />
+  <iframe src={placeholderSrc} class="placeholder" allowfullscreen></iframe>
 </div>
-

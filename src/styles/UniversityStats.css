@@ -1,0 +1,28 @@
+.stats-container {
+    padding: 4.7vh 3.8vw;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--off-black);
+    gap: 4.73vh;
+    color: #e6e6e6;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 38pt;
+    font-weight: normal;
+    text-align: center;
+    width: 15.9vw;
+}
+
+.stat-label {
+    font-size: 19pt;
+    width: 55.641vw;
+}

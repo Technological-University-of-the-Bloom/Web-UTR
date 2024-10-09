@@ -1,15 +1,172 @@
 ---
-import Home from "../layouts/Mobile/Home.astro";
+import HomeMobile from "../layouts/Mobile/Home.astro";
+import HomeDesktop from "../layouts/Desktop/Home.astro";
 import "../styles/global.css";
----
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap"
-  rel="stylesheet"
-/>
+import Slider from "../components/Slider.astro";
+import HeadText from "../components/HeadText.astro";
+import Video from "../components/Video.astro";
+import UnivesityStats from "../components/UnivesityStats.astro";
+import Button from "../components/Button.astro";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+
+import HomeNewsSection from "../components/HomeNewsSection.astro";
+let news;
+try {
+  const response = await fetch("https://your-api-endpoint.com/news");
+  if (response.ok) {
+    const latestNews = await response.json();
+    if (latestNews.length > 0) {
+      news = latestNews;
+    }
+  } else {
+    console.error(`Error: ${response.status} - ${response.statusText}`);
+  }
+} catch (error) {
+  console.error("Fetch failed: ", error);
+}
+---
 
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.webmanifest" />
-<Home title="Home | UTR" />
+<div class="mobile">
+  <HomeMobile title="Home | UTR">
+    <main>
+      <div class="b-100"></div>
+      <HeadText
+        firstLine="TO GROW"
+        secondLine="YOU’VE FOUND THE PLACE THAT ALLOWS YOU"
+        img="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/students_utr.jpg"
+      />
+      <p class="paragraph">
+        Universidad Tecnológica El Retoño is a new alternative for higher
+        education. At UTR, we believe in your potential to transform, innovate,
+        and thrive.<br /><br />Our commitment to education empowers you to break
+        boundaries, discover your passions, and create a future full of
+        possibilities. Together, we grow, learn, and shape tomorrow.
+      </p>
+      <Slider
+        images={[
+          "src/img/jpg/home1.jpg",
+          "src/img/jpg/home2.jpg",
+          "src/img/jpg/home3.jpg",
+          "src/img/jpg/home4.jpg",
+        ]}
+        id="slider-0"
+      />
+      <Video />
+      <p class="paragraph">
+        We empower students and businesses with immersive technologies to lead
+        in Industry 4.0. Our state-of-the-art space provides virtual reality
+        experiences, simulations, and cutting-edge tools like CAD, AI, and game
+        development, preparing you to innovate boldly and succeed in the future.
+      </p>
+      <Button
+        label="EXPLORE OUR PROGRAMMES"
+        borderColor="black"
+        style="font-size: 50px;"
+      />
+      <UnivesityStats />
+      <HeadText
+        firstLine="PROUD PARTNERS"
+        secondLine="OUR"
+        img="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      />
+      <Slider
+        images={[
+          "https://upload.wikimedia.org/wikipedia/commons/2/23/Nissan_2020_logo.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/9/9d/Capgemini_201x_logo.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/c/c6/Jatco_logo.svg",
+          "https://upload.wikimedia.org/wikipedia/commons/1/1e/Marelli_logo.svg",
+          "https://www.linktrade.mx/wp-content/uploads/2022/12/cliente5-2.png",
+          "src/img/svg/cliente6.svg",
+        ]}
+        id="slider-1"
+      />
+      <HeadText
+        firstLine="NEWS"
+        secondLine="LATEST"
+        img="https://images.pexels.com/photos/1493226/pexels-photo-1493226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      />
+      <HomeNewsSection news={news} />
+
+      <div class="button-container">
+        <div>
+          <p class="pre-button-text" style="color: var(--off-black);">
+            TAKE THE
+          </p>
+          <p class="pre-button-text">NEXT STEP<br /><br /></p>
+        </div>
+        <div class="button-list">
+          <Button label="REQUEST INFO" color="white" />
+          <Button label="VISIT" color="white" />
+          <Button label="APPLY NOW" color="white" />
+        </div>
+      </div>
+
+      <div class="legal-img-cont">
+        <a href=""><img src="src/img/jpg/bot_home_1.jpeg" /></a>
+        <a href=""><img src="src/img/jpg/bot_home_2.jpeg" /></a>
+      </div>
+    </main>
+  </HomeMobile>
+</div>
+
+<div class="desktop">
+  <HomeDesktop title="Home | UTR">
+    <main>
+      <div
+        style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;"
+      >
+        <p style="font-family: 'Barlow', sans-serif; font-weight: 700;">
+          Under construction
+        </p>
+      </div>
+    </main>
+  </HomeDesktop>
+</div>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Espaciado de 50px entre componentes */
+  }
+
+  .pre-button-text {
+    font-family: "Barlow", sans-serif;
+    font-weight: 900;
+    font-size: 35pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #e12030;
+    padding: 8.3vh 5.1vw;
+    color: #e6e6e6;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaciado de 30px entre los botones */
+    align-items: center; /* Centra los botones horizontalmente */
+  }
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Espaciado de 50px entre los párrafos */
+    align-items: center; /* Centra el contenido horizontalmente */
+  }
+
+  h2 {
+    color: #ffffff; /* Asegurar que el h2 sea blanco */
+  }
+</style>

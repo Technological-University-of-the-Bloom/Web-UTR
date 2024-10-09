@@ -1,0 +1,54 @@
+---
+import "../styles/HomeNewsSection.css";
+interface NewsItem {
+  date: string;
+  mainContent: string;
+  title: string;
+  link: string;
+}
+
+interface Props {
+  news: NewsItem[];
+}
+const { news }: Props = Astro.props;
+
+const defaultNews = [
+  {
+    date: "9 September, 2024",
+    title:
+      "UTR launches CIC 4.0 in favour of innovation, a facility to lead technological development in the country",
+    mainContent: "Contenido de la noticia 1",
+    link: "utr.edu.mx/news",
+  },
+  {
+    date: "10 September, 2024",
+    title: "Dean Gilberto Morrillón tells about the future of the UTR",
+    mainContent: "Contenido de la noticia 2",
+    link: "utr.edu.mx/news",
+  },
+  {
+    date: "11 September, 2024",
+    title:
+      "US consulate gives visit to the UTR; new opportunities for students to go abroad",
+    mainContent: "Contenido de la noticia 3",
+    link: "utr.edu.mx/news",
+  },
+];
+
+const newsToDisplay = news && news.length > 0 ? news : defaultNews;
+---
+
+<div class="news-container">
+  {
+    newsToDisplay.map((item) => (
+      <a href={item.link || "#"}>
+        <div>
+          <div class="line" />
+          <div class="date">{item.date}</div>
+          <div class="title">{item.title}</div>
+        </div>
+      </a>
+    ))
+  }
+</div>
+<a class="pilon" href="utr.edu.mx/news">SEE ALL NEWS</a>
