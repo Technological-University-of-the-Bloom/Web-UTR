@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: "Futura";
-  src: url("public/futura/Futura Book font.ttf") format("truetype");
+  src: url("/futura/Futura Book font.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
