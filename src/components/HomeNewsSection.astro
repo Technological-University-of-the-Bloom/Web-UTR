@@ -1,0 +1,64 @@
+---
+const { date, mainContent, title, link } = Astro.props;
+//const { data } = Astro.props;
+
+const defaultNews = [
+  { date: "2024-10-01", title: "Noticia 1", mainContent: "Contenido de la noticia 1" },
+  { date: "2024-10-02", title: "Noticia 2", mainContent: "Contenido de la noticia 2" },
+  { date: "2024-10-03", title: "Noticia 3", mainContent: "Contenido de la noticia 3" }
+];
+---
+
+<html lang="es">
+  <head>
+    <style>
+      @font-face {
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        font-family: 'Futura Book', Arial, sans-serif;
+        font-size: 20px;
+      }
+
+      .container {
+        border-top: 1px solid #000;
+        width: 300px;
+        padding: 10px;
+      }
+
+      .date {
+        font-size: 12px;
+        color: #333;
+      }
+
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 5px;
+        color: #000;
+      }
+
+      .main-content {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 5px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="date">
+        {date}
+      </div>
+      <div class="title">
+        {title}
+      </div>
+      <div class="main-content">
+        {mainContent}
+      </div>
+    </div>
+  </body>
+</html>
