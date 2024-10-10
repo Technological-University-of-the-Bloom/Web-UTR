@@ -11,11 +11,11 @@ body {
 
 .dropdown-parent {
   position: relative; /* Necesario para el posicionamiento absoluto del pseudo-elemento */
-  font-size: 46px;
+  font-size: 35px;
   font-weight: bold;
   margin: 10px 0; /* Espacio entre los elementos de texto */
   cursor: pointer;
-  margin-bottom: 30px; /* Espacio entre el texto y la línea (50px) */
+  margin-bottom: 35px; /* Espacio entre el texto y la línea (50px) */
 }
 
 .dropdown-parent:after {
@@ -26,7 +26,7 @@ body {
   background-color: black; /* Color de la línea */
   position: absolute; /* Posiciona el pseudo-elemento */
   left: 0; /* Alinear a la izquierda del contenedor */
-  top: 25%; /* Coloca la línea justo debajo del texto */
+  top: 0%; /* Coloca la línea justo debajo del texto */
   margin-top: 50px; /* Espacio de 50px entre el texto y la línea */
 }
 
@@ -93,4 +93,26 @@ body {
   font-size: 25px; /* Tamaño del ícono de cerrar */
   margin: 10px; /* Espacio alrededor del ícono de cerrar */
   transition: color 0.3s ease; /* Transición suave del color */
+}
+.close-button {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 25px;
+  margin: 20px 0;
+}
+.dropdown-child {
+  font-size: 30px;
+  margin-left: 0px;
+  display: none; /* Oculto por defecto */
+  box-sizing: border-box;
+  font-family: "Futura", sans-serif;
+  line-height: 50px;
 }
