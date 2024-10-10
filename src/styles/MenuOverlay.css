@@ -3,18 +3,31 @@ body {
 }
 
 .dropdown-link-container {
-  width: 200px; /* Ajusta según el ancho que desees */
+  width: 100%; /* Ajusta según el ancho que desees */
   padding: 10px;
   border-right: 1px solid #ddd;
+  margin: 0 auto; /* Esto lo centra horizontalmente */
 }
 
 .dropdown-parent {
-  font-size: 24px;
+  position: relative; /* Necesario para el posicionamiento absoluto del pseudo-elemento */
+  font-size: 46px;
   font-weight: bold;
-  margin: 10px 0;
-  padding-bottom: 5px;
-  border-bottom: 1px solid black;
+  margin: 10px 0; /* Espacio entre los elementos de texto */
   cursor: pointer;
+  margin-bottom: 30px; /* Espacio entre el texto y la línea (50px) */
+}
+
+.dropdown-parent:after {
+  content: ""; /* Crea un pseudo-elemento */
+  display: block; /* Permite que el pseudo-elemento tenga tamaño */
+  width: 200px; /* Ancho de la línea */
+  height: 1px; /* Grosor de la línea (delgada) */
+  background-color: black; /* Color de la línea */
+  position: absolute; /* Posiciona el pseudo-elemento */
+  left: 0; /* Alinear a la izquierda del contenedor */
+  top: 25%; /* Coloca la línea justo debajo del texto */
+  margin-top: 50px; /* Espacio de 50px entre el texto y la línea */
 }
 
 .dropdown-parent:last-child {
@@ -29,7 +42,55 @@ body {
 
 .close-icon {
   float: right;
-  font-size: 24px;
+  font-size: 45px;
   cursor: pointer;
   margin-left: 10px;
+}
+
+/* MenuOverlay.css */
+#menuOverlay {
+  display: none; /* Ocultar por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* Fondo blanco sólido */
+  z-index: 200; /* Asegura que el menú esté por encima de otros elementos */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  text-align: left; /* Alinear el texto a la izquierda */
+}
+
+/* Estilos para el menú que se muestra debajo de los logos */
+.navbar {
+  display: flex; /* Muestra los elementos como flexibles */
+  flex-direction: column; /* Organiza en columna */
+  position: absolute; /* Posición absoluta */
+  top: 100%; /* Justo debajo de la topbar */
+  left: 0; /* Alineado a la izquierda */
+  width: 100%; /* Ancho completo */
+  background-color: white; /* Fondo blanco */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra del menú */
+  z-index: 200; /* Asegura que esté por encima de otros elementos */
+  padding: 10px 0; /* Espaciado interno del menú */
+  border-radius: 0 0 10px 10px; /* Esquinas redondeadas en la parte inferior */
+  visibility: hidden; /* Oculto por defecto */
+  opacity: 0; /* Invisible por defecto */
+  transition:
+    visibility 0s,
+    opacity 0.3s ease; /* Transiciones suaves */
+}
+
+/* Agregando estilos adicionales que no afectarán a otros componentes */
+.topbar .dropdown-container:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Color de fondo al pasar el ratón */
+  border-radius: 5px; /* Esquinas redondeadas al pasar el ratón */
+}
+
+.close-icon {
+  cursor: pointer; /* Cambia el cursor al pasar sobre el ícono de cerrar */
+  font-size: 25px; /* Tamaño del ícono de cerrar */
+  margin: 10px; /* Espacio alrededor del ícono de cerrar */
+  transition: color 0.3s ease; /* Transición suave del color */
 }
