@@ -1,68 +1,52 @@
-* {
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease,
-    visibility 0s 0.5s,
-    max-height 0.3s ease-out;
-}
-
 .dropdown-link-container {
   width: 100%;
-  padding: 10px;
-  margin: 0 auto;
+  padding: 30px 20px;
   gap: 100px;
 }
 
-/* Estilo para los títulos de los dropdowns */
 .dropdown-parent {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
-  position: relative;
   font-size: 34pt;
+  color: var(--off-black);
+  position: relative;
   margin-bottom: 6vh;
+  transition: opacity 0.5s ease;
 }
 
-/* Línea debajo del texto */
 .dropdown-parent:after {
   content: "";
   display: block;
   width: 51.282vw;
-  height: 2px;
-  background-color: black;
+  height: 1px;
+  background-color: var(--off-black);
   position: absolute;
   left: 0;
-  margin-top: 20px; /* La línea estará 20px debajo del texto */
+  top: 0;
+  margin-top: 9vh;
 }
 
-/* Animación al expandirse */
-.dropdown-parent.active {
-  transform: translateY(-20px);
-}
-
-.dropdown-parent:last-child {
-  border-bottom: none;
-}
-
-/* Estilo para los dropdowns hijos */
 .dropdown-child {
-  font-size: 30px;
-  margin-left: 0;
-  display: none;
-  box-sizing: border-box;
-  font-family: "Futura", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-size: 22.5pt;
   line-height: 50px;
+  margin-left: 0;
+  box-sizing: border-box;
+
+  /* Transition and hidden state */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease-out,
+    opacity 0.3s ease-out;
 }
 
-.close-icon {
-  float: right;
-  font-size: 45px;
-  z-index: 12;
-  cursor: pointer;
-  margin: 10px;
-  transition: color 0.3s ease;
+.dropdown-child.show {
+  max-height: 100px;
+  opacity: 1;
 }
 
-/* Menú overlay */
 #menuOverlay {
   transform: translateY(-100vh);
   position: fixed;
@@ -75,16 +59,17 @@
   padding: 20px;
   text-align: left;
   transition:
-    opacity 0.6s ease-in-out,
-    visibility 0.6s ease-in-out;
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    visibility 0s 0.5s;
 }
 
 #menuOverlay.show {
   visibility: visible;
   transform: translateY(0);
+  transition: transform 0.5s ease;
 }
 
-/* Navbar debajo de los logos */
 .navbar {
   display: flex;
   flex-direction: column;
@@ -104,21 +89,13 @@
     opacity 0.3s ease;
 }
 
-.topbar .dropdown-container:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
-}
-
 .close-button {
-  margin: 0;
-  padding: 0;
-  text-align: right;
-  float: right;
-  margin-right: 10px;
-  width: 25px;
-  height: 25px;
-  font-size: 35px;
-  font-weight: bold;
-  line-height: 25px;
-  margin: 20px 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  margin: 30px 25px;
+  z-index: 120;
+  transition: opacity 0.5s ease;
 }
