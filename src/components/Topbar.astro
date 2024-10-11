@@ -39,16 +39,13 @@ import MenuOverlay from "./MenuOverlay.astro";
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const dropdownToggle = document.getElementById(
-      "dropdownToggle"
-    ) as HTMLElement;
-    const menuOverlay = document.getElementById("menuOverlay") as HTMLElement;
+    const dropdownToggle = document.getElementById("dropdownToggle");
+    const menuOverlay = document.getElementById("menuOverlay");
 
     if (dropdownToggle && menuOverlay) {
       dropdownToggle.addEventListener("click", (event) => {
         event.preventDefault();
-        menuOverlay.style.display =
-          menuOverlay.style.display === "block" ? "none" : "block";
+        menuOverlay.classList.toggle("show");
       });
     }
   });

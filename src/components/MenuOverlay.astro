@@ -1,98 +1,93 @@
 ---
 import "../styles/MenuOverlay.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 ---
 
-<div class="menu-overlay" id="menuOverlay" style="display: none;">
-  <div class="close-button" id="closeButton">×</div>
+<div class="menu-overlay" id="menuOverlay">
+  <FontAwesomeIcon icon={faXmark} className="close-button" id="closeButton" />
   <div class="dropdown-link-container">
-    <div>
-      <h1 class="dropdown-parent">Home</h1>
-      <div class="dropdown-child"></div>
-    </div>
+    <a href="/"><h1 class="dropdown-parent">Home</h1></a>
     <div>
       <h1 class="dropdown-parent">About Us</h1>
       <div class="dropdown-child">
-        Educational model
-        <br />
-        Facilities
-        <br />
-        Legal
-        <br />
-        People operations
+        Educational model<br />Facilities<br />Legal<br />People operations
       </div>
     </div>
     <div>
       <h1 class="dropdown-parent">Academics</h1>
       <div class="dropdown-child">
-        Extracurriculars
-        <br />
-        Student services
-        <br />
-        Scholarships
-        <br />
-        Internships
+        Extracurriculars<br />Student services<br />Scholarships<br
+        />Internships
       </div>
-      <div>
-        <h1 class="dropdown-parent">Mobility</h1>
-        <div class="dropdown-child"></div>
+    </div>
+    <div>
+      <h1 class="dropdown-parent">Mobility</h1><div class="dropdown-child">
       </div>
-      <div>
-        <h1 class="dropdown-parent">Services</h1>
-        <div class="dropdown-child"></div>
+    </div>
+    <div>
+      <h1 class="dropdown-parent">Services</h1><div class="dropdown-child">
       </div>
-      <div>
-        <h1 class="dropdown-parent">Communication</h1>
-        <div class="dropdown-child"></div>
+    </div>
+    <div>
+      <h1 class="dropdown-parent">Communication</h1><div class="dropdown-child">
       </div>
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const closeButton = document.getElementById("closeButton") as HTMLElement;
-      const menuOverlay = document.getElementById("menuOverlay") as HTMLElement;
-      const dropdownParents = document.querySelectorAll(
-        ".dropdown-parent"
-      ) as NodeListOf<HTMLElement>;
+      const closeButton = document.getElementById("closeButton");
+      const menuOverlay = document.getElementById("menuOverlay");
+      const dropdownParents = document.querySelectorAll(".dropdown-parent");
+      const dropdownContainer = document.querySelector(
+        ".dropdown-link-container"
+      );
 
-      if (closeButton && menuOverlay) {
-        closeButton.addEventListener("click", () => {
-          menuOverlay.style.display = "none";
+      let originalIndexes = Array.from(dropdownParents).map(
+        (parent, index) => ({
+          parentElement: parent.parentElement,
+          index: index,
+        })
+      );
+
+      closeButton &&
+        menuOverlay?.addEventListener("click", () => {
+          menuOverlay.classList.remove("show");
         });
-      }
 
-      dropdownParents.forEach((parent) => {
-        parent.addEventListener("click", () => {
-          const child = parent.nextElementSibling as HTMLElement;
+      dropdownParents.forEach((parent, index) => {
+        parent.addEventListener("click", (e) => {
+          e.stopPropagation();
 
-          if (child && child.classList.contains("dropdown-child")) {
-            const isVisible =
-              window.getComputedStyle(child).display === "block";
+          const child = parent.nextElementSibling;
+          const isVisible = child.classList.contains("show");
 
-            if (!isVisible) {
-              dropdownParents.forEach((otherParent) => {
-                const otherChild =
-                  otherParent.nextElementSibling as HTMLElement;
-                if (
-                  otherChild &&
-                  otherChild.classList.contains("dropdown-child")
-                ) {
-                  otherParent.style.display = "none";
-                  otherChild.style.display = "none";
+          if (!isVisible) {
+            dropdownContainer.prepend(parent.parentElement);
+            dropdownParents.forEach((otherParent) => {
+              if (otherParent !== parent) {
+                otherParent.style.opacity = "0"; // Hide the text
+                otherParent.style.pointerEvents = "none"; // Disable interaction
+                const otherChild = otherParent.nextElementSibling;
+                if (otherChild && otherChild !== child) {
+                  otherChild.classList.remove("show"); // Hide other dropdowns
                 }
-              });
+              }
+            });
+          } else {
+            // Restore to the original position
+            const originalIndex = originalIndexes[index].index + 1;
+            const nextElement = dropdownContainer.children[originalIndex];
+            dropdownContainer.insertBefore(parent.parentElement, nextElement);
 
-              parent.style.display = "block";
-              child.style.display = "block";
-            } else {
-              dropdownParents.forEach((otherParent) => {
-                const otherChild =
-                  otherParent.nextElementSibling as HTMLElement;
-                otherParent.style.display = "block";
-                otherChild.style.display = "none";
-              });
-            }
+            // Restore other dropdown parents
+            dropdownParents.forEach((otherParent) => {
+              otherParent.style.opacity = "1"; // Show text
+              otherParent.style.pointerEvents = "auto"; // Re-enable interaction
+            });
           }
+          child.classList.toggle("show");
         });
       });
     });
