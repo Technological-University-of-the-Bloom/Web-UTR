@@ -1,104 +1,94 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
 .dropdown-link-container {
-  width: 100%; /* Ajusta según el ancho que desees */
+  width: 100%;
   padding: 10px;
-  border-right: 1px solid #ddd;
-  margin: 0 auto; /* Esto lo centra horizontalmente */
+  margin: 0 auto;
+  gap: 100px;
 }
 
 .dropdown-parent {
-  position: relative; /* Necesario para el posicionamiento absoluto del pseudo-elemento */
-  font-size: 35px;
-  font-weight: bold;
-  margin: 10px 0; /* Espacio entre los elementos de texto */
-  cursor: pointer;
-  margin-bottom: 35px; /* Espacio entre el texto y la línea (50px) */
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  position: relative;
+  font-size: 34pt;
+  margin-bottom: 6vh;
 }
 
 .dropdown-parent:after {
-  content: ""; /* Crea un pseudo-elemento */
-  display: block; /* Permite que el pseudo-elemento tenga tamaño */
-  width: 200px; /* Ancho de la línea */
-  height: 1px; /* Grosor de la línea (delgada) */
-  background-color: black; /* Color de la línea */
-  position: absolute; /* Posiciona el pseudo-elemento */
-  left: 0; /* Alinear a la izquierda del contenedor */
-  top: 0%; /* Coloca la línea justo debajo del texto */
-  margin-top: 50px; /* Espacio de 50px entre el texto y la línea */
+  content: "";
+  display: block;
+  width: 51.282vw;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 9vh;
 }
 
 .dropdown-parent:last-child {
-  border-bottom: none; /* Sin borde en el último elemento */
+  border-bottom: none;
 }
 
 .dropdown-child {
-  font-size: 18px;
-  margin-left: 10px;
-  display: none; /* Oculto por defecto */
+  font-size: 30px;
+  margin-left: 0;
+  display: none;
+  box-sizing: border-box;
+  font-family: "Futura", sans-serif;
+  line-height: 50px;
 }
 
 .close-icon {
   float: right;
   font-size: 45px;
+  z-index: 12;
   cursor: pointer;
-  margin-left: 10px;
+  margin: 10px;
+  transition: color 0.3s ease;
 }
 
-/* MenuOverlay.css */
 #menuOverlay {
-  display: none; /* Ocultar por defecto */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ffffff; /* Fondo blanco sólido */
-  z-index: 200; /* Asegura que el menú esté por encima de otros elementos */
+  background: #ffffff;
+  z-index: 200;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-  text-align: left; /* Alinear el texto a la izquierda */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
-/* Estilos para el menú que se muestra debajo de los logos */
 .navbar {
-  display: flex; /* Muestra los elementos como flexibles */
-  flex-direction: column; /* Organiza en columna */
-  position: absolute; /* Posición absoluta */
-  top: 100%; /* Justo debajo de la topbar */
-  left: 0; /* Alineado a la izquierda */
-  width: 100%; /* Ancho completo */
-  background-color: white; /* Fondo blanco */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra del menú */
-  z-index: 200; /* Asegura que esté por encima de otros elementos */
-  padding: 10px 0; /* Espaciado interno del menú */
-  border-radius: 0 0 10px 10px; /* Esquinas redondeadas en la parte inferior */
-  visibility: hidden; /* Oculto por defecto */
-  opacity: 0; /* Invisible por defecto */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+  padding: 10px 0;
+  border-radius: 0 0 10px 10px;
+  visibility: hidden;
+  opacity: 0;
   transition:
     visibility 0s,
-    opacity 0.3s ease; /* Transiciones suaves */
+    opacity 0.3s ease;
 }
 
-/* Agregando estilos adicionales que no afectarán a otros componentes */
 .topbar .dropdown-container:hover {
-  background-color: rgba(0, 0, 0, 0.05); /* Color de fondo al pasar el ratón */
-  border-radius: 5px; /* Esquinas redondeadas al pasar el ratón */
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
 }
 
-.close-icon {
-  cursor: pointer; /* Cambia el cursor al pasar sobre el ícono de cerrar */
-  font-size: 25px; /* Tamaño del ícono de cerrar */
-  margin: 10px; /* Espacio alrededor del ícono de cerrar */
-  transition: color 0.3s ease; /* Transición suave del color */
-}
 .close-button {
   margin: 0;
   padding: 0;
   text-align: right;
-  cursor: pointer;
   float: right;
   margin-right: 10px;
   width: 25px;
@@ -107,12 +97,4 @@ body {
   font-weight: bold;
   line-height: 25px;
   margin: 20px 0;
-}
-.dropdown-child {
-  font-size: 30px;
-  margin-left: 0px;
-  display: none; /* Oculto por defecto */
-  box-sizing: border-box;
-  font-family: "Futura", sans-serif;
-  line-height: 50px;
 }
