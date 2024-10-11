@@ -43,8 +43,7 @@ import MenuOverlay from "./MenuOverlay.astro";
     const menuOverlay = document.getElementById("menuOverlay");
 
     if (dropdownToggle && menuOverlay) {
-      dropdownToggle.addEventListener("click", (event) => {
-        event.preventDefault();
+      dropdownToggle.addEventListener("click", () => {
         menuOverlay.classList.toggle("show");
       });
     }

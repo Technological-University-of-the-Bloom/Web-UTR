@@ -27,12 +27,6 @@
 }
 
 .dropdown-child {
-  font-family: "Barlow", sans-serif;
-  font-size: 22.5pt;
-  line-height: 50px;
-  margin-left: 0;
-  box-sizing: border-box;
-
   /* Transition and hidden state */
   max-height: 0;
   overflow: hidden;
@@ -42,8 +36,16 @@
     opacity 0.3s ease-out;
 }
 
+.dropdown-child a {
+  font-family: "Barlow", sans-serif;
+  font-size: 22.5pt;
+  color: var(--off-black);
+  text-decoration: none;
+  display: block;
+}
+
 .dropdown-child.show {
-  max-height: 100px;
+  max-height: 1000px;
   opacity: 1;
 }
 
