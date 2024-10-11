@@ -44,8 +44,11 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
         ".dropdown-link-container"
       );
 
-      let originalPositions = Array.from(dropdownParents).map(
-        (parent) => parent.parentElement
+      let originalIndexes = Array.from(dropdownParents).map(
+        (parent, index) => ({
+          parentElement: parent.parentElement,
+          index: index,
+        })
       );
 
       closeButton &&
@@ -61,10 +64,11 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
           const isVisible = child.classList.contains("show");
 
           if (!isVisible) {
+            // Move the clicked parent element to the top
             dropdownContainer.prepend(parent.parentElement);
             dropdownParents.forEach((otherParent) => {
               if (otherParent !== parent) {
-                otherParent.style.opacity = "0"; // Hide the text
+                otherParent.style.opacity = "0"; // Hide text
                 otherParent.style.pointerEvents = "none"; // Disable interaction
                 const otherChild = otherParent.nextElementSibling;
                 if (otherChild && otherChild !== child) {
@@ -73,13 +77,12 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
               }
             });
           } else {
-            const originalParent = originalPositions[index];
-            dropdownContainer.insertBefore(
-              parent.parentElement,
-              originalParent
-            );
+            const originalIndex = originalIndexes[index].index + 1;
+            const nextElement = dropdownContainer.children[originalIndex];
+            dropdownContainer.insertBefore(parent.parentElement, nextElement);
+
             dropdownParents.forEach((otherParent) => {
-              otherParent.style.opacity = "1"; // Show the text
+              otherParent.style.opacity = "1"; // Show text
               otherParent.style.pointerEvents = "auto"; // Re-enable interaction
             });
           }
