@@ -6,7 +6,8 @@ import "../styles/MenuOverlay.css";
   <div class="close-button" id="closeButton">×</div>
   <div class="dropdown-link-container">
     <div>
-      <h1 class="dropdown-parent" id="homeLink">Home</h1>
+      <h1 class="dropdown-parent">Home</h1>
+      <div class="dropdown-child"></div>
     </div>
     <div>
       <h1 class="dropdown-parent">About Us</h1>
@@ -31,18 +32,18 @@ import "../styles/MenuOverlay.css";
         <br />
         Internships
       </div>
-    </div>
-    <div>
-      <h1 class="dropdown-parent">Mobility</h1>
-      <div class="dropdown-child"></div>
-    </div>
-    <div>
-      <h1 class="dropdown-parent">Services</h1>
-      <div class="dropdown-child"></div>
-    </div>
-    <div>
-      <h1 class="dropdown-parent">Communication</h1>
-      <div class="dropdown-child"></div>
+      <div>
+        <h1 class="dropdown-parent">Mobility</h1>
+        <div class="dropdown-child"></div>
+      </div>
+      <div>
+        <h1 class="dropdown-parent">Services</h1>
+        <div class="dropdown-child"></div>
+      </div>
+      <div>
+        <h1 class="dropdown-parent">Communication</h1>
+        <div class="dropdown-child"></div>
+      </div>
     </div>
   </div>
 
@@ -53,7 +54,6 @@ import "../styles/MenuOverlay.css";
       const dropdownParents = document.querySelectorAll(
         ".dropdown-parent"
       ) as NodeListOf<HTMLElement>;
-      const homeLink = document.getElementById("homeLink") as HTMLElement; // Referencia a Home
 
       if (closeButton && menuOverlay) {
         closeButton.addEventListener("click", () => {
@@ -61,51 +61,37 @@ import "../styles/MenuOverlay.css";
         });
       }
 
-      // Lógica especial para "Home"
-      homeLink.addEventListener("click", () => {
-        menuOverlay.style.display = "none"; // Cerrar el menú
-        window.scrollTo(0, 0); // Redirigir a la parte superior
-      });
-
       dropdownParents.forEach((parent) => {
-        parent.addEventListener("click", (event) => {
-          // Prevenir que el clic en "Home" se propague
-          if (event.target === homeLink) return;
-
+        parent.addEventListener("click", () => {
           const child = parent.nextElementSibling as HTMLElement;
 
-          // Mostrar u ocultar el dropdown actual
-          const isVisible = window.getComputedStyle(child).display === "block";
+          if (child && child.classList.contains("dropdown-child")) {
+            const isVisible =
+              window.getComputedStyle(child).display === "block";
 
-          if (!isVisible) {
-            // Ocultar todos los otros dropdown-child y mostrar solo el actual
-            dropdownParents.forEach((otherParent) => {
-              const otherChild = otherParent.nextElementSibling as HTMLElement;
-              if (otherParent !== parent) {
-                otherParent.style.display = "none"; // Ocultar otros parents
+            if (!isVisible) {
+              dropdownParents.forEach((otherParent) => {
+                const otherChild =
+                  otherParent.nextElementSibling as HTMLElement;
                 if (
                   otherChild &&
                   otherChild.classList.contains("dropdown-child")
                 ) {
-                  otherChild.style.display = "none"; // Ocultar otros dropdowns
+                  otherParent.style.display = "none";
+                  otherChild.style.display = "none";
                 }
-              }
-            });
-            // Mostrar el dropdown actual
-            child.style.display = "block"; // Mostrar el child actual
-            parent.style.display = "block"; // Asegurarse de que el parent sea visible
-          } else {
-            // Volver a mostrar todos los elementos del menú
-            dropdownParents.forEach((otherParent) => {
-              otherParent.style.display = "block"; // Mostrar todos los parents
-              const otherChild = otherParent.nextElementSibling as HTMLElement;
-              if (
-                otherChild &&
-                otherChild.classList.contains("dropdown-child")
-              ) {
-                otherChild.style.display = "none"; // Ocultar todos los dropdowns
-              }
-            });
+              });
+
+              parent.style.display = "block";
+              child.style.display = "block";
+            } else {
+              dropdownParents.forEach((otherParent) => {
+                const otherChild =
+                  otherParent.nextElementSibling as HTMLElement;
+                otherParent.style.display = "block";
+                otherChild.style.display = "none";
+              });
+            }
           }
         });
       });
