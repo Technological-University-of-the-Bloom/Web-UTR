@@ -99,6 +99,10 @@ button:hover {
   height: 1vh;
 }
 
+.b-1000 {
+  height: 10vh;
+}
+
 /* Bottom legals text box*/
 
 .bottom-legals {
@@ -110,7 +114,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* Espaciado de 50px entre los elementos dentro del contenedor */
 }
 
 .legal-img-cont {
@@ -125,4 +128,13 @@ button:hover {
   width: auto;
   height: auto;
   object-fit: cover;
+}
+
+/* Images */
+
+.centered-image {
+  width: 90%; /* Set width to 90% */
+  border-radius: 20px; /* Round corners by 20px */
+  display: block; /* Make the image a block element */
+  margin: 0 auto; /* Center it horizontally */
 }

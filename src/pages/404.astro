@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+
+import HomeMobile from "../layouts/Mobile/Home.astro";
+import HomeDesktop from "../layouts/Desktop/Home.astro";
+
+const jokeMessage = "Oops! You took a wrong turn and ended up here!";
+const funnyImageUrl =
+  "https://media.giphy.com/media/l2JehQ2GitHGdVG9y/giphy.gif"; // Example funny gif URL
+---
+
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+
+<!-- 404 Page Layout -->
+<div class="mobile">
+  <HomeMobile title="404 | UTR">
+    <main>
+      <div class="buttons">
+        <div class="b-1000"></div>
+        <h1>404 - Page Not Found</h1>
+        <p class="paragraph">{jokeMessage}</p>
+        <img src={funnyImageUrl} alt="Funny 404 gif" class="centered-image" />
+        <p class="paragraph">
+          Looks like you've wandered off into the digital wilderness. Don't
+          worry, it happens to the best of us!
+        </p>
+        <a
+          href="/"
+          class="paragraph"
+          style="text-decoration: none; color:var(--primary-red);"
+          >Take me back home</a
+        >
+        <div class="b-1000"></div>
+      </div>
+    </main>
+  </HomeMobile>
+</div>
