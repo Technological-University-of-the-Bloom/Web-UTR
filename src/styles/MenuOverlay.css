@@ -1,52 +1,98 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor del menú */
 .dropdown-link-container {
   width: 100%;
   padding: 10px;
+  border-right: 1px solid #ddd;
   margin: 0 auto;
-  gap: 100px;
 }
 
+/* Estilo para los títulos de los dropdowns */
 .dropdown-parent {
-  font-family: "Barlow", sans-serif;
-  font-weight: 600;
   position: relative;
-  font-size: 34pt;
-  margin-bottom: 6vh;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 0;
+  margin-bottom: 35px;
+  transition:
+    background-color 0.6s ease-in-out,
+    color 0.6s ease-in-out,
+    transform 0.3s ease;
+  /* Cambiar el ancho para que coincida con la línea debajo */
+  display: block; /* Cambiar a block para que ocupe todo el ancho */
+  width: 200px; /* Mantener el mismo ancho que la línea */
 }
 
+/* Línea debajo del texto */
 .dropdown-parent:after {
   content: "";
   display: block;
-  width: 51.282vw;
-  height: 2px;
+  width: 200px; /* Mantener el mismo ancho */
+  height: 1px;
   background-color: black;
   position: absolute;
   left: 0;
-  top: 0;
-  margin-top: 9vh;
+  margin-top: 20px; /* La línea estará 20px debajo del texto */
 }
 
-.dropdown-parent:last-child {
-  border-bottom: none;
+/* Animación al expandirse */
+.dropdown-parent.active {
+  transform: translateY(-20px);
 }
 
+/* Estilo del último dropdown - sin línea */
+.dropdown-parent:last-child:after {
+  display: none; /* No mostrar la línea en el último elemento */
+}
+
+/* Estilo para los dropdowns hijos */
 .dropdown-child {
-  font-size: 30px;
-  margin-left: 0;
-  display: none;
+  font-size: 18px;
+  margin-left: 10px;
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.6s ease-in-out,
+    opacity 0.6s ease-in-out;
   box-sizing: border-box;
   font-family: "Futura", sans-serif;
   line-height: 50px;
 }
 
-.close-icon {
-  float: right;
-  font-size: 45px;
-  z-index: 12;
-  cursor: pointer;
-  margin: 10px;
-  transition: color 0.3s ease;
+/* Cuando el dropdown está visible */
+.dropdown-child.show {
+  max-height: 500px;
+  opacity: 1;
 }
 
+/* Estilo del ícono de cerrar */
+.close-icon,
+.close-button {
+  cursor: pointer;
+  font-size: 35px;
+  font-weight: bold;
+  margin: 10px;
+  padding: 0;
+  text-align: right;
+  transition: color 0.6s ease;
+  float: right;
+}
+
+/* Contenedor específico del botón de cerrar */
+.close-button {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+}
+
+/* Menú overlay */
 #menuOverlay {
   display: none;
   position: fixed;
@@ -59,8 +105,12 @@
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: left;
+  transition:
+    opacity 0.6s ease-in-out,
+    visibility 0.6s ease-in-out;
 }
 
+/* Navbar debajo de los logos */
 .navbar {
   display: flex;
   flex-direction: column;
@@ -77,24 +127,10 @@
   opacity: 0;
   transition:
     visibility 0s,
-    opacity 0.3s ease;
+    opacity 0.6s ease;
 }
 
-.topbar .dropdown-container:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
-}
-
-.close-button {
-  margin: 0;
-  padding: 0;
-  text-align: right;
-  float: right;
-  margin-right: 10px;
-  width: 25px;
-  height: 25px;
-  font-size: 35px;
-  font-weight: bold;
-  line-height: 25px;
-  margin: 20px 0;
+/* Clase para ocultar elementos */
+.hidden {
+  display: none;
 }

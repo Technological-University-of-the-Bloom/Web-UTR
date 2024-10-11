@@ -6,8 +6,7 @@ import "../styles/MenuOverlay.css";
   <div class="close-button" id="closeButton">×</div>
   <div class="dropdown-link-container">
     <div>
-      <h1 class="dropdown-parent">Home</h1>
-      <div class="dropdown-child"></div>
+      <h1 class="dropdown-parent" id="homeLink">Home</h1>
     </div>
     <div>
       <h1 class="dropdown-parent">About Us</h1>
@@ -32,18 +31,18 @@ import "../styles/MenuOverlay.css";
         <br />
         Internships
       </div>
-      <div>
-        <h1 class="dropdown-parent">Mobility</h1>
-        <div class="dropdown-child"></div>
-      </div>
-      <div>
-        <h1 class="dropdown-parent">Services</h1>
-        <div class="dropdown-child"></div>
-      </div>
-      <div>
-        <h1 class="dropdown-parent">Communication</h1>
-        <div class="dropdown-child"></div>
-      </div>
+    </div>
+    <div>
+      <h1 class="dropdown-parent">Mobility</h1>
+      <div class="dropdown-child"></div>
+    </div>
+    <div>
+      <h1 class="dropdown-parent">Services</h1>
+      <div class="dropdown-child"></div>
+    </div>
+    <div>
+      <h1 class="dropdown-parent">Communication</h1>
+      <div class="dropdown-child"></div>
     </div>
   </div>
 
@@ -54,44 +53,60 @@ import "../styles/MenuOverlay.css";
       const dropdownParents = document.querySelectorAll(
         ".dropdown-parent"
       ) as NodeListOf<HTMLElement>;
+      const homeLink = document.getElementById("homeLink") as HTMLElement; // Reference to Home
+
+      // Function to hide menu overlay
+      const hideMenuOverlay = () => {
+        menuOverlay.style.display = "none"; // Hide the menu overlay
+        dropdownParents.forEach((parent) => {
+          const child = parent.nextElementSibling as HTMLElement;
+          if (child) {
+            child.classList.remove("show"); // Remove 'show' class
+            parent.classList.remove("active"); // Remove 'active' class
+          }
+        });
+      };
 
       if (closeButton && menuOverlay) {
-        closeButton.addEventListener("click", () => {
-          menuOverlay.style.display = "none";
-        });
+        closeButton.addEventListener("click", hideMenuOverlay);
       }
 
+      // Special logic for "Home"
+      homeLink.addEventListener("click", () => {
+        hideMenuOverlay(); // Close the menu
+        window.scrollTo(0, 0); // Scroll to the top
+      });
+
       dropdownParents.forEach((parent) => {
-        parent.addEventListener("click", () => {
+        parent.addEventListener("click", (event) => {
           const child = parent.nextElementSibling as HTMLElement;
 
-          if (child && child.classList.contains("dropdown-child")) {
-            const isVisible =
-              window.getComputedStyle(child).display === "block";
+          // Prevent clicks on "Home" from triggering dropdown behavior
+          if (event.target === homeLink) return;
 
-            if (!isVisible) {
-              dropdownParents.forEach((otherParent) => {
-                const otherChild =
-                  otherParent.nextElementSibling as HTMLElement;
-                if (
-                  otherChild &&
-                  otherChild.classList.contains("dropdown-child")
-                ) {
-                  otherParent.style.display = "none";
-                  otherChild.style.display = "none";
+          // Check if the dropdown is already visible
+          const isVisible = child.classList.contains("show");
+
+          // If the dropdown is visible, hide it and show all parents
+          if (isVisible) {
+            child.classList.remove("show"); // Hide the current dropdown
+            parent.classList.remove("active"); // Remove active class from the parent
+            dropdownParents.forEach((otherParent) => {
+              otherParent.style.display = "block"; // Show all parents
+            });
+          } else {
+            // Hide all other dropdowns and parents, show only the current one
+            dropdownParents.forEach((otherParent) => {
+              const otherChild = otherParent.nextElementSibling as HTMLElement;
+              if (otherParent !== parent) {
+                otherParent.style.display = "none"; // Hide other parents
+                if (otherChild) {
+                  otherChild.classList.remove("show"); // Hide other dropdowns
                 }
-              });
-
-              parent.style.display = "block";
-              child.style.display = "block";
-            } else {
-              dropdownParents.forEach((otherParent) => {
-                const otherChild =
-                  otherParent.nextElementSibling as HTMLElement;
-                otherParent.style.display = "block";
-                otherChild.style.display = "none";
-              });
-            }
+              }
+            });
+            child.classList.add("show"); // Show the current dropdown
+            parent.classList.add("active"); // Add active class to the parent
           }
         });
       });
