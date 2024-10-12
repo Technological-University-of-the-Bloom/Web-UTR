@@ -1,0 +1,132 @@
+---
+import "../styles/MenuOverlay.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+---
+
+<div class="menu-overlay" id="menuOverlay">
+  <FontAwesomeIcon icon={faXmark} className="close-button" id="closeButton" />
+  <div class="dropdown-link-container">
+    <a href="/"><h1 class="dropdown-parent">Home</h1></a>
+    <div>
+      <h1 class="dropdown-parent">About Us</h1>
+      <div class="dropdown-child">
+        <a href="/educational-model">Educational model</a><br />
+        <a href="/facilities">Facilities</a><br />
+        <a href="/legal">Legal</a>
+        <br /><a href="jobs">Jobs</a>
+      </div>
+    </div>
+    <div>
+      <h1 class="dropdown-parent">Academics</h1>
+      <div class="dropdown-child">
+        <a href="/graduate-programmes">Graduate Programmes</a><br />
+        <a href="/undergrad-programmes">Undergrad Programmes</a><br />
+        <a href="/admission">Admission</a><br /> //Add link within page to redirect
+        to Alexis' project
+        <a href="/continuing-education">Continuing Education</a>
+      </div>
+    </div>
+    <div>
+      <h1 class="dropdown-parent">Student Life</h1>
+      <div class="dropdown-child">
+        <a href="/extracurriculars">Extracurriculars</a><br />
+        <a href="/student-services">Student Services</a><br />
+        <a href="/scholarships">Scholarships</a><br />
+        <a href="/internships">Internships</a>
+      </div>
+    </div>
+    <div>
+      <div>
+        <h1 class="dropdown-parent">International</h1>
+        <div class="dropdown-child">
+          <a href="/learn-abroad">Learn Abroad</a><br />
+          <a href="/MITACS">MITACS</a><br />
+          <a href="/KOSPIE">KOSPIE</a>
+        </div>
+      </div>
+      <div>
+        <h1 class="dropdown-parent">Services</h1>
+        <div class="dropdown-child">
+          <a href="/it-services">IT Services</a><br />
+          <a href="/projects">Projects</a><br />
+          <a href="/cic">CIC 4.0</a><br />
+          <a href="/language-centre">Language Centre</a><br />
+          <a href="https://app.saeko.io/login">SAEKO Login</a>
+        </div>
+      </div>
+      <div>
+        <h1 class="dropdown-parent">Communication</h1>
+        <div class="dropdown-child">
+          <a href="/news">News</a><br />
+          <a href="/blogs">Blogs</a><br />
+          <a href="/contact">Contact</a><br />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const closeButton = document.getElementById("closeButton");
+        const menuOverlay = document.getElementById("menuOverlay");
+        const dropdownParents = document.querySelectorAll(".dropdown-parent");
+        const dropdownContainer = document.querySelector(
+          ".dropdown-link-container"
+        );
+
+        let originalIndexes = Array.from(dropdownParents).map(
+          (parent, index) => ({
+            parentElement: parent.parentElement,
+            index: index,
+          })
+        );
+
+        const toggleOverlay = () => {
+          if (menuOverlay) {
+            menuOverlay.classList.toggle("show");
+          }
+        };
+
+        closeButton &&
+          closeButton?.addEventListener("click", (event) => {
+            event.stopPropagation(); // Prevents triggering unwanted clicks
+            toggleOverlay();
+          });
+
+        dropdownParents.forEach((parent, index) => {
+          parent.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            const child = parent.nextElementSibling;
+            const isVisible = child.classList.contains("show");
+
+            if (!isVisible) {
+              // Move the clicked parent element to the top
+              dropdownContainer.prepend(parent.parentElement);
+              dropdownParents.forEach((otherParent) => {
+                if (otherParent !== parent) {
+                  otherParent.style.opacity = "0"; // Hide text
+                  otherParent.style.pointerEvents = "none"; // Disable interaction
+                  const otherChild = otherParent.nextElementSibling;
+                  if (otherChild && otherChild !== child) {
+                    otherChild.classList.remove("show"); // Hide other dropdowns
+                  }
+                }
+              });
+            } else {
+              const originalIndex = originalIndexes[index].index + 1;
+              const nextElement = dropdownContainer.children[originalIndex];
+              dropdownContainer.insertBefore(parent.parentElement, nextElement);
+
+              dropdownParents.forEach((otherParent) => {
+                otherParent.style.opacity = "1"; // Show text
+                otherParent.style.pointerEvents = "auto"; // Re-enable interaction
+              });
+            }
+            child && child.classList.toggle("show");
+          });
+        });
+      });
+    </script>
+  </div>
+</div>

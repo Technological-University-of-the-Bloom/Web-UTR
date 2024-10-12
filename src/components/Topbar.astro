@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Topbar.css";
+import MenuOverlay from "./MenuOverlay.astro";
 ---
 
 <div class="topbar">
@@ -24,12 +25,27 @@ import "../styles/Topbar.css";
   </div>
 
   <div class="dropdown-container">
-    <a href="#">
+    <a href="#" id="dropdownToggle">
       <FontAwesomeIcon
         icon={faAnglesDown}
         color="#07065D"
         style={{ width: "5.9vw", height: "auto" }}
       />
     </a>
+
+    <MenuOverlay />
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdownToggle = document.getElementById("dropdownToggle");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    if (dropdownToggle && menuOverlay) {
+      dropdownToggle.addEventListener("click", () => {
+        menuOverlay.classList.toggle("show");
+      });
+    }
+  });
+</script>
