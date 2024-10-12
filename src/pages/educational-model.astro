@@ -1,0 +1,115 @@
+---
+import HomeMobile from "../layouts/Mobile/Home.astro";
+import HomeDesktop from "../layouts/Desktop/Home.astro";
+import "../styles/global.css";
+
+import HeadText from "../components/HeadText.astro";
+import Slider from "../components/Slider.astro";
+---
+
+<div class="mobile">
+  <HomeMobile title="Educational Model | UTR">
+    <main>
+      <!-- Header Section -->
+      <div class="b-100"></div>
+      <HeadText
+        firstLine="MODEL"
+        secondLine="EDUCATIONAL"
+        img="https://scontent.fagu5-1.fna.fbcdn.net/v/t39.30808-6/457519724_535163562218207_6127731192003782260_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=N0_xgO__Q0QQ7kNvgEYNLg3&_nc_ht=scontent.fagu5-1.fna&_nc_gid=AH974HcmNhKIAX-k5v73C1r&oh=00_AYAvDoHBM1k45UKwTERQdNQdrPFAKyCmLSA4DkAwA4ddyA&oe=6710994E"
+      />
+
+      <!-- Bilingual Section -->
+      <section class="info-section">
+        <h2>Bilingual Education</h2>
+        <p>
+          Our study plans operate in English and Spanish. Students begin with an
+          English immersion course, enabling them to take some subjects in
+          English from the first semester, taught by qualified and certified
+          faculty.
+        </p>
+      </section>
+
+      <!-- International Section -->
+      <section class="info-section">
+        <h2>International Opportunities</h2>
+        <p>
+          We encourage students to master other languages, opening doors to
+          global job opportunities and professional growth in various countries.
+        </p>
+      </section>
+
+      <!-- Sustainable Section -->
+      <section class="info-section">
+        <h2>Sustainability</h2>
+        <p>
+          At UTR, we promote values such as respect, tolerance, and equality
+          while implementing actions to minimize environmental impacts.
+        </p>
+      </section>
+
+      <!-- Dual and Alternate Model Section -->
+      <section class="info-section">
+        <h2>Dual and Alternate Training Model</h2>
+        <p>
+          The dual and alternating training model allows students to balance
+          academic activities at the university with hands-on training at
+          companies, enhancing practical skills in real-world environments.
+        </p>
+        <p>
+          This approach ensures graduates are better prepared for the workforce
+          by aligning their skills with industry needs.
+        </p>
+      </section>
+
+      <!-- Image Slider for Visual Engagement -->
+      <Slider
+        images={[
+          "https://scontent.fagu5-1.fna.fbcdn.net/v/t39.30808-6/456862628_532631362471427_4147197842766405806_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=yEaHmaSou0sQ7kNvgFfaLJL&_nc_ht=scontent.fagu5-1.fna&_nc_gid=AxGDeAJqNjoymEM8ZiYV5Me&oh=00_AYAOQDWa41zUGd9UB9prfQhWeJxKGEH8MQ9dZOU3GcL_pQ&oe=671089E7",
+          "https://scontent.fagu5-1.fna.fbcdn.net/v/t39.30808-6/457260670_532631259138104_4444761106099227130_n.jpg?stp=cp6_dst-jpg&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2c1HyC3tNE8Q7kNvgHC07jF&_nc_ht=scontent.fagu5-1.fna&_nc_gid=A9DvyEkNZjkwN-X2GknDxIZ&oh=00_AYAEVW_gPS2RoH4GebbxYkL0OQmZVGO_RzStw8G65SkhdA&oe=6710960B",
+          "https://scontent.fagu5-1.fna.fbcdn.net/v/t39.30808-6/457215314_532631329138097_6181395443919562570_n.jpg?stp=cp6_dst-jpg&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=isUoc38U46YQ7kNvgHlO7pi&_nc_ht=scontent.fagu5-1.fna&_nc_gid=A2AtsU4GeZ1yMjV7kstABG-&oh=00_AYCUnAldr8GM07edsVN7CyMkn-_pgINwcxbpkdx9BiEbDw&oe=67108F59",
+        ]}
+        id="slider-educational-model"
+      />
+
+      <div class="b-1000"></div>
+
+      <!-- Call to Action Buttons -->
+    </main>
+  </HomeMobile>
+</div>
+
+<div class="desktop">
+  <HomeDesktop title="Educational Model | UTR">
+    <main>
+      <div
+        style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;"
+      >
+        <p style="font-family: 'Barlow', sans-serif; font-weight: 700;">
+          Under construction
+        </p>
+      </div>
+    </main>
+  </HomeDesktop>
+</div>
+
+<style>
+  .info-section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--off-white);
+    border-radius: 8px;
+  }
+
+  .info-section h2 {
+    color: #e12030;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+</style>
