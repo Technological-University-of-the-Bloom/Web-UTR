@@ -98,11 +98,12 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
             e.stopPropagation();
 
             const child = parent.nextElementSibling;
-            const isVisible = child.classList.contains("show");
+            const isVisible = child ? child.classList.contains("show") : null;
 
             if (!isVisible) {
               // Move the clicked parent element to the top
-              dropdownContainer &&
+              parent.parentElement &&
+                dropdownContainer &&
                 dropdownContainer.prepend(parent.parentElement);
               dropdownParents.forEach((otherParent) => {
                 if (otherParent !== parent) {
@@ -116,7 +117,9 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
               });
             } else {
               const originalIndex = originalIndexes[index].index + 1;
-              const nextElement = dropdownContainer.children[originalIndex];
+              const nextElement = dropdownContainer
+                ? dropdownContainer.children[originalIndex]
+                : null;
               parent.parentElement &&
                 dropdownContainer &&
                 dropdownContainer.insertBefore(
