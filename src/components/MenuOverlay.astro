@@ -102,11 +102,12 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
             if (!isVisible) {
               // Move the clicked parent element to the top
-              dropdownContainer.prepend(parent.parentElement);
+              dropdownContainer &&
+                dropdownContainer.prepend(parent.parentElement);
               dropdownParents.forEach((otherParent) => {
                 if (otherParent !== parent) {
-                  otherParent.style.opacity = "0"; // Hide text
-                  otherParent.style.pointerEvents = "none"; // Disable interaction
+                  (otherParent as HTMLElement).style.opacity = "0"; // Hide text
+                  (otherParent as HTMLElement).style.pointerEvents = "none"; // Disable interaction
                   const otherChild = otherParent.nextElementSibling;
                   if (otherChild && otherChild !== child) {
                     otherChild.classList.remove("show"); // Hide other dropdowns
@@ -116,11 +117,16 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
             } else {
               const originalIndex = originalIndexes[index].index + 1;
               const nextElement = dropdownContainer.children[originalIndex];
-              dropdownContainer.insertBefore(parent.parentElement, nextElement);
+              parent.parentElement &&
+                dropdownContainer &&
+                dropdownContainer.insertBefore(
+                  parent.parentElement,
+                  nextElement
+                );
 
               dropdownParents.forEach((otherParent) => {
-                otherParent.style.opacity = "1"; // Show text
-                otherParent.style.pointerEvents = "auto"; // Re-enable interaction
+                (otherParent as HTMLElement).style.opacity = "1"; // Show text
+                (otherParent as HTMLElement).style.pointerEvents = "auto"; // Re-enable interaction
               });
             }
             child && child.classList.toggle("show");
