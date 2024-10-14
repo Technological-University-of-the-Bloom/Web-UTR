@@ -117,17 +117,21 @@ button:hover {
 }
 
 .legal-img-cont {
-  justify-content: center;
-  align-items: center;
-  height: 21vh;
-  padding: 30px 20px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 21vh; /* Altura adaptable */
+  padding-left: 20px; /* Mantén el padding */
+  padding-right: 20px;
+  width: 100%; /* Se adapta al ancho de la página */
+  box-sizing: border-box; /* Asegura que el padding no aumente el ancho */
 }
 
 .legal-img-cont img {
   max-height: 100%;
-  width: auto;
-  height: auto;
+  max-width: 100%; /* Se adapta al ancho del contenedor */
   object-fit: cover;
+  display: block;
 }
 
 /* Images */
