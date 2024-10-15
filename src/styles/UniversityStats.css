@@ -2,9 +2,9 @@
   padding: 4.7vh 3.8vw;
   display: flex;
   flex-direction: column;
-  background-color: var(--off-black); /* Fondo oscuro */
+  background-color: var(--off-black);
   gap: 4.73vh;
-  color: #e6e6e6; /* Color de texto en modo claro */
+  color: var(--off-white);
   width: 100%;
   justify-content: space-around;
 }
@@ -21,11 +21,22 @@
   font-weight: normal;
   text-align: center;
   width: 15.9vw;
-  color: #e6e6e6; /* Color de número en modo claro */
+  color: var(--off-white);
 }
 
 .stat-label {
   font-size: 19pt;
   width: 55.641vw;
-  color: #e6e6e6; /* Color de etiqueta en modo claro */
+  color: var(--off-white);
+}
+
+@media (prefers-color-scheme: dark) {
+  .stat-number,
+  .stat-label {
+    color: var(--black);
+  }
+
+  .stats-container {
+    background-color: var(--secondary-blue);
+  }
 }

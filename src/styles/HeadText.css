@@ -23,7 +23,6 @@
   border-radius: 20px 0 0 20px;
 }
 
-/* Títulos compartidos */
 .smallTitle,
 .bigTitle,
 .container-no-img h1,
@@ -45,13 +44,12 @@
   font-weight: 900;
 }
 
-/* Estilos para el segundo componente */
 .container-no-img {
   display: flex;
   flex-direction: column;
 }
 
-/* Modo oscuro */
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   .text-overlay {
     color: var(--black);

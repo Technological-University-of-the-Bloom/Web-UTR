@@ -3,7 +3,6 @@ a {
   text-decoration: none;
 }
 
-/* Contenedor de noticias */
 .news-container {
   display: flex;
   flex-direction: column;
@@ -12,7 +11,6 @@ a {
   height: auto;
 }
 
-/* Línea horizontal */
 .line {
   border: 0;
   background-color: #000;
@@ -21,12 +19,11 @@ a {
   margin-bottom: 4.8vh;
 }
 
-/* Estilos para fecha y título */
 .date,
 .title {
   margin-left: 20px;
   font-family: "Barlow", sans-serif;
-  color: var(--black); /* Color en modo claro */
+  color: var(--black);
 }
 
 .date {
@@ -40,7 +37,6 @@ a {
   margin-top: 0px;
 }
 
-/* Pilón */
 .pilon {
   margin-left: 5.1vw;
   font-family: "Barlow", sans-serif;
@@ -48,20 +44,17 @@ a {
   color: var(--primary-red);
 }
 
-/* Modo oscuro */
 @media (prefers-color-scheme: dark) {
   .date,
   .title {
-    color: var(--black); /* Cambiar a blanco en modo oscuro */
+    color: var(--black);
   }
 
   .line {
-    background-color: var(
-      --black
-    ); /* Cambiar la línea a blanco en modo oscuro */
+    background-color: var(--black);
   }
 
   .pilon {
-    color: var(--secondary-red); /* Cambiar color del pilón en modo oscuro */
+    color: var(--secondary-red);
   }
 }
