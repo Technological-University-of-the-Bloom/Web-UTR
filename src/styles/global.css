@@ -139,7 +139,6 @@ button:hover {
     --black: #ffffff;
     --off-black: #1e272e;
     --secondary-blue: #1e90ff;
-    --terciary-blue: #3742fa;
   }
   body {
     background-color: var(--off-black);
@@ -153,6 +152,6 @@ button:hover {
     color: var(--primary-red);
   }
   .bottom-legals {
-    background-color: var(--off-black);
+    background-color: var(--white);
   }
 }
