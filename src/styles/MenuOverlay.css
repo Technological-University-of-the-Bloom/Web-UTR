@@ -1,33 +1,38 @@
+/* Estilos generales del contenedor del menú desplegable */
 .dropdown-link-container {
   width: 100%;
   padding: 30px 20px;
   gap: 100px;
 }
 
+/* Título principal del menú desplegable */
+/* Estilos generales del título del menú desplegable */
 .dropdown-parent {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   font-size: 34pt;
-  color: var(--off-black);
+  color: var(--off-black); /* Color en modo claro */
   position: relative;
   margin-bottom: 6vh;
   transition: opacity 0.5s ease;
 }
 
+/* Línea debajo del título del menú desplegable */
 .dropdown-parent:after {
   content: "";
   display: block;
   width: 51.282vw;
   height: 1px;
-  background-color: var(--off-black);
+  background-color: var(--off-black); /* Color en modo claro */
   position: absolute;
   left: 0;
   top: 0;
   margin-top: 9vh;
 }
 
+/* Enlaces hijos del menú desplegable */
 .dropdown-child {
-  /* Transition and hidden state */
+  /* Estado inicial oculto */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -39,7 +44,7 @@
 .dropdown-child a {
   font-family: "Barlow", sans-serif;
   font-size: 22.5pt;
-  color: var(--off-black);
+  color: var(--off-black); /* Color en modo claro */
   text-decoration: none;
   display: block;
 }
@@ -49,6 +54,7 @@
   opacity: 1;
 }
 
+/* Estilos del overlay del menú */
 #menuOverlay {
   transform: translateY(-100vh);
   position: fixed;
@@ -56,7 +62,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: white;
+  background: var(--white); /* Fondo blanco en modo claro */
   z-index: 110;
   padding: 20px;
   text-align: left;
@@ -72,6 +78,7 @@
   transition: transform 0.5s ease;
 }
 
+/* Estilos de la barra de navegación */
 .navbar {
   display: flex;
   flex-direction: column;
@@ -79,7 +86,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: var(--white); /* Fondo blanco en modo claro */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 110;
   padding: 10px 0;
@@ -91,6 +98,7 @@
     opacity 0.3s ease;
 }
 
+/* Botón de cierre del menú */
 .close-button {
   position: absolute;
   top: 20px;
@@ -100,4 +108,28 @@
   margin: 30px 25px;
   z-index: 120;
   transition: opacity 0.5s ease;
+}
+
+/* Modo oscuro */
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  .dropdown-parent,
+  .dropdown-child a {
+    color: var(--black); /* Cambia el texto a blanco en modo oscuro */
+  }
+
+  /* Cambia el color de la línea a blanco en modo oscuro */
+  .dropdown-parent:after {
+    background-color: var(--black); /* Cambia el color de la línea a blanco */
+  }
+
+  #menuOverlay {
+    background: var(--off-black); /* Fondo oscuro en modo oscuro */
+  }
+
+  .navbar {
+    background-color: var(
+      --off-black
+    ); /* Fondo oscuro para la barra de navegación */
+  }
 }

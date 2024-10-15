@@ -19,6 +19,7 @@
   font-family: "Futura", sans-serif;
   font-size: 20px;
   line-height: 1;
+  color: var(--black);
 }
 
 /*Colours*/
@@ -41,7 +42,7 @@
   font-style: normal;
 }
 
-/* Buttons Styles */
+/* Buttons */
 
 button {
   background-color: transparent;
@@ -59,10 +60,11 @@ button {
 
 button:hover {
   background-color: white;
-  color: #e12030;
+  color: var(--primary-red);
 }
 
-.buttons {
+.buttons,
+.button-list {
   display: flex;
   flex-direction: column;
   gap: 2.37vh;
@@ -73,16 +75,7 @@ button:hover {
   font-family: "Barlow", sans-serif;
   font-weight: 500;
   font-size: 23pt;
-  width: auto;
-  height: auto;
   text-align: center;
-}
-
-.button-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2.37vh;
-  align-items: center;
 }
 
 /* General text styles */
@@ -109,7 +102,6 @@ button:hover {
   color: var(--off-white);
   width: 100%;
   background-color: var(--off-black);
-  /* Fondo negro */
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
@@ -134,11 +126,36 @@ button:hover {
   display: block;
 }
 
-/* Images */
-
 .centered-image {
-  width: 90%; /* Set width to 90% */
-  border-radius: 20px; /* Round corners by 20px */
-  display: block; /* Make the image a block element */
-  margin: 0 auto; /* Center it horizontally */
+  width: 90%;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-red: #ff6b6b;
+    --secondary-red: #ff4757;
+    --white: #2f3542;
+    --off-white: #57606f;
+    --black: #ffffff;
+    --off-black: #1e272e;
+    --secondary-blue: #1e90ff;
+  }
+  body {
+    background-color: var(--off-black);
+    color: var(--black);
+  }
+  button {
+    border-color: var(--white);
+  }
+  button:hover {
+    background-color: var(--white);
+    color: var(--primary-red);
+  }
+  .bottom-legals {
+    background-color: var(--white);
+  }
 }

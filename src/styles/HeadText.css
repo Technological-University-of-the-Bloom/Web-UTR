@@ -16,14 +16,13 @@
   position: absolute;
   top: 22vh;
   left: 0;
-  color: #000;
-  background-color: #fff;
+  color: var(--black);
+  background-color: var(--white);
   padding: 20px;
   width: 269px;
   border-radius: 20px 0 0 20px;
 }
 
-/* Shared title styles */
 .smallTitle,
 .bigTitle,
 .container-no-img h1,
@@ -35,18 +34,35 @@
 .container-no-img h2 {
   font-weight: normal;
   font-size: 30px;
-  color: #000;
+  color: var(--black);
 }
 
 .bigTitle,
 .container-no-img h1 {
   font-size: 46px;
-  color: #e30613;
+  color: var(--primary-red);
   font-weight: 900;
 }
 
-/* Estilos para el segundo componente */
 .container-no-img {
   display: flex;
   flex-direction: column;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .text-overlay {
+    color: var(--black);
+    background-color: var(--off-black);
+  }
+
+  .smallTitle,
+  .container-no-img h2 {
+    color: var(--black);
+  }
+
+  .bigTitle,
+  .container-no-img h1 {
+    color: var(--primary-red);
+  }
 }
