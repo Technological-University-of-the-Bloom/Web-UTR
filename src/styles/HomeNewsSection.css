@@ -1,7 +1,9 @@
+/* Enlaces */
 a {
   text-decoration: none;
 }
 
+/* Contenedor de noticias */
 .news-container {
   display: flex;
   flex-direction: column;
@@ -10,19 +12,21 @@ a {
   height: auto;
 }
 
+/* Línea horizontal */
 .line {
   border: 0;
   background-color: #000;
-  height: .05rem;
+  height: 0.05rem;
   width: 53vw;
   margin-bottom: 4.8vh;
 }
 
+/* Estilos para fecha y título */
 .date,
 .title {
   margin-left: 20px;
-  font-family: Barlow, sans-serif;
-  color: var(--black);
+  font-family: "Barlow", sans-serif;
+  color: var(--black); /* Color en modo claro */
 }
 
 .date {
@@ -36,9 +40,28 @@ a {
   margin-top: 0px;
 }
 
+/* Pilón */
 .pilon {
   margin-left: 5.1vw;
-  font-family: Barlow, sans-serif;
+  font-family: "Barlow", sans-serif;
   font-weight: 600;
   color: var(--primary-red);
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  .date,
+  .title {
+    color: var(--black); /* Cambiar a blanco en modo oscuro */
+  }
+
+  .line {
+    background-color: var(
+      --black
+    ); /* Cambiar la línea a blanco en modo oscuro */
+  }
+
+  .pilon {
+    color: var(--secondary-red); /* Cambiar color del pilón en modo oscuro */
+  }
 }
