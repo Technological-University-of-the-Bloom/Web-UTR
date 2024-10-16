@@ -1,5 +1,7 @@
 ---
 import Topbar from "../../components/Topbar.astro";
+import BottomLegals from "../../components/BottomLegals.astro";
+
 
 interface Props {
   title: string;
@@ -29,7 +31,8 @@ const { title, description } = Astro.props;
   </head>
 
   <body>
-    <Topbar />
+  <Topbar />
     <slot />
-  </body>
+    <BottomLegals />
+  </body>
 </html>

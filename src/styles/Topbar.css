@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  padding: 15px 30px;
+  padding: 7px 30px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   position: fixed;
@@ -15,14 +15,14 @@
 
 .flag-container img {
   filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
-  width: 9vw;
+  width: 5vw;
 }
 
 .center-logo img {
   filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
-  width: 17.7vw;
+  width: 7vw;
 }
 
 .dropdown-container {
-  width: 9vw;
+  width: 1vw;
 }
