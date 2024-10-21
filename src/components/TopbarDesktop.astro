@@ -1,0 +1,47 @@
+---
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
+import "../styles/TopbarDesktop.css";
+import MenuOverlay from "./MenuOverlay.astro";
+---
+
+<div class="topbar">
+  <div class="flag-container">
+    <a href="#">
+      <img
+        src="https://raw.githubusercontent.com/Technological-University-of-the-Bloom/Web-UTR/refs/heads/main/src/img/svg/Flag.svg"
+        alt="Idioma"
+      />
+    </a>
+  </div>
+
+  <div class="center-logo">
+    <a href="/">
+      <img
+        src="https://raw.githubusercontent.com/Technological-University-of-the-Bloom/Web-UTR/refs/heads/main/src/img/svg/256.svg"
+        alt="Logo UTR"
+      />
+    </a>
+  </div>
+
+  <div class="dropdown-container">
+    <a href="#" id="dropdownToggle">
+      <FontAwesomeIcon icon={faAnglesDown} color="#07065D" />
+    </a>
+
+    <MenuOverlay />
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdownToggle = document.getElementById("dropdownToggle");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    if (dropdownToggle && menuOverlay) {
+      dropdownToggle.addEventListener("click", () => {
+        menuOverlay.classList.toggle("show");
+      });
+    }
+  });
+</script>
