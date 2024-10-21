@@ -22,6 +22,28 @@
   filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
 }
 
+/* Button container */
+.button-container {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  margin-left: 15px; /* Space between the flag and buttons */
+}
+
+/* Button styles */
+.topbar-btn {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.topbar-btn:hover {
+  background-color: #5452a2;
+}
+
 .dropdown-container {
   width: 9vw;
 }
@@ -38,11 +60,16 @@
   .dropdown-container {
     width: 9vw;
   }
+
+  .topbar-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
 }
 
 @media (min-width: 601px) {
   .flag-container img {
-    width: 4vw;
+    width: 3vw;
   }
 
   .center-logo img {
@@ -52,5 +79,11 @@
 
   .dropdown-container {
     width: 2vw;
+  }
+
+  .topbar-btn {
+    margin-right: 50px;
+    width: 12vw;
+    height: 4vw;
   }
 }

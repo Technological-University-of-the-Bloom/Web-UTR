@@ -15,6 +15,14 @@ import MenuOverlay from "./MenuOverlay.astro";
     </a>
   </div>
 
+  <div class="dropdown-container">
+    <a href="#" id="dropdownToggle">
+      <FontAwesomeIcon icon={faAnglesDown} color="#07065D" />
+    </a>
+
+    <MenuOverlay />
+  </div>
+
   <div class="flag-container">
     <a href="#">
       <img
@@ -24,13 +32,11 @@ import MenuOverlay from "./MenuOverlay.astro";
     </a>
   </div>
 
-  <div class="dropdown-container">
-    <a href="#" id="dropdownToggle">
-      <FontAwesomeIcon icon={faAnglesDown} color="#07065D" />
-    </a>
-
-    <MenuOverlay />
+  <div class="button-container">
+    <button class="topbar-btn">Search</button>
+    <button class="topbar-btn">Log in</button>
   </div>
+
 </div>
 
 <script>
