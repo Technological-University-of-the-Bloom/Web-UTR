@@ -2,13 +2,6 @@
   display: none;
 }
 
-/* Margen para desktop */
-@media (min-width: 769px) {
-  .mobile {
-    margin: 20px; /* Ajusta el margen según tus necesidades */
-  }
-}
-
 @media (max-width: 768px) {
   .mobile {
     display: block;
@@ -28,7 +21,7 @@
   line-height: 1;
 }
 
-/* Colours */
+/*Colours*/
 :root {
   --primary-red: #e12030;
   --secondary-red: #be1a2f;
@@ -102,7 +95,7 @@ button:hover {
   height: 10vh;
 }
 
-/* Bottom legals text box */
+/* Bottom legals text box*/
 
 .bottom-legals {
   color: var(--off-white);
