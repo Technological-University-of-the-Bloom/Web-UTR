@@ -130,13 +130,92 @@ try {
 <div class="desktop">
   <HomeDesktop title="Home | UTR">
     <main>
-      <div
-        style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;"
-      >
-        <p style="font-family: 'Barlow', sans-serif; font-weight: 700;">
-          Under construction
-        </p>
+      <div class="b-100"></div>
+      <HeadText
+        firstLine="TO GROW"
+        secondLine="YOU’VE FOUND THE PLACE THAT ALLOWS YOU"
+        img="https://utr.edu.mx/pages/nosotros/imagenes_nosotros/students_utr.jpg"
+      />
+      <p class="paragraph">
+        Universidad Tecnológica El Retoño is a new alternative for higher
+        education. At UTR, we believe in your potential to transform, innovate,
+        and thrive.<br /><br />Our commitment to education empowers you to break
+        boundaries, discover your passions, and create a future full of
+        possibilities. Together, we grow, learn, and shape tomorrow.
+      </p>
+      <Slider
+        images={[
+          "https://github.com/Technological-University-of-the-Bloom/Web-UTR/blob/main/src/img/jpg/home1.jpg?raw=true",
+          "https://github.com/Technological-University-of-the-Bloom/Web-UTR/blob/main/src/img/jpg/home2.jpg?raw=true",
+          "https://github.com/Technological-University-of-the-Bloom/Web-UTR/blob/main/src/img/jpg/home3.jpg?raw=true",
+          "https://github.com/Technological-University-of-the-Bloom/Web-UTR/blob/main/src/img/jpg/home4.jpg?raw=true",
+        ]}
+        id="slider-0"
+      />
+      <Video />
+      <p class="paragraph">
+        We empower students and businesses with immersive technologies to lead
+        in Industry 4.0. Our state-of-the-art space provides virtual reality
+        experiences, simulations, and cutting-edge tools like CAD, AI, and game
+        development, preparing you to innovate boldly and succeed in the future.
+      </p>
+      <Button
+        label="EXPLORE OUR PROGRAMMES"
+        color="black"
+        style="font-size: 50px;"
+      />
+      <UnivesityStats />
+      <HeadText
+        firstLine="PROUD PARTNERS"
+        secondLine="OUR"
+        img="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      />
+      <Slider
+        images={[
+          "https://raw.githubusercontent.com/Technological-University-of-the-Bloom/Web-UTR/refs/heads/main/src/img/svg/partner_1.svg",
+          "https://github.com/Technological-University-of-the-Bloom/Web-UTR/blob/main/src/img/png/partner_2.png?raw=true",
+          "https://raw.githubusercontent.com/Technological-University-of-the-Bloom/Web-UTR/refs/heads/main/src/img/svg/partner_3.svg",
+          "https://raw.githubusercontent.com/Technological-University-of-the-Bloom/Web-UTR/refs/heads/main/src/img/svg/partner_4.svg",
+          "https://raw.githubusercontent.com/Technological-University-of-the-Bloom/Web-UTR/refs/heads/main/src/img/svg/partner_5.svg",
+          "https://raw.githubusercontent.com/Technological-University-of-the-Bloom/Web-UTR/refs/heads/main/src/img/svg/partner_6.svg",
+        ]}
+        id="slider-1"
+      />
+      <HeadText
+        firstLine="NEWS"
+        secondLine="LATEST"
+        img="https://images.pexels.com/photos/1493226/pexels-photo-1493226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      />
+      <HomeNewsSection news={news} />
+
+      <div class="button-container">
+        <div>
+          <p class="pre-button-text" style="color: var(--off-black);">
+            TAKE THE
+          </p>
+          <p class="pre-button-text">NEXT STEP<br /><br /></p>
+        </div>
+        <div class="button-list">
+          <Button label="REQUEST INFO" color="white" />
+          <Button label="VISIT" color="white" />
+          <Button label="APPLY NOW" color="white" />
+        </div>
       </div>
+
+      <div class="legal-img-cont">
+        <a href="https://www.plataformadetransparencia.org.mx"
+          ><img
+            src="https://github.com/Technological-University-of-the-Bloom/Web-UTR/blob/main/src/img/jpg/bot_home_1.jpeg?raw=true"
+          /></a
+        >
+        <a
+          href="https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/"
+          ><img
+            src="https://github.com/Technological-University-of-the-Bloom/Web-UTR/blob/main/src/img/jpg/bot_home_2.jpeg?raw=true"
+          /></a
+        >
+      </div>
+      <div style="height: 0px; margin: 0px 0;"></div>
     </main>
   </HomeDesktop>
 </div>
