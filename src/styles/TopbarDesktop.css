@@ -42,14 +42,15 @@
 
 @media (min-width: 601px) {
   .flag-container img {
-    width: 5vw;
+    width: 4vw;
   }
 
   .center-logo img {
-    width: 7vw;
+    margin-left: 60px;
+    width: 4vw;
   }
 
   .dropdown-container {
-    width: 3vw;
+    width: 2vw;
   }
 }
